@@ -1,2 +1,1 @@
-# hovastore-support-fe
-HovaStore Support Website
+# 2024 HOVA INTERNSHIP PROGRAM
