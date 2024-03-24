@@ -9,7 +9,6 @@ const AppRoutes = () => {
             <Routes>
                 <Route path="/" element={<HomeLayout />}>
                     <Route path="" element={<Home />} />
-                    <Route path="home" element={<Home />} />
                     {/* Add many routes as you want */}
                 </Route>
             </Routes>
