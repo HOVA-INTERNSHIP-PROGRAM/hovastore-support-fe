@@ -17,6 +17,7 @@ export const getAllSolutionsSlice = createSlice({
     name: "getAllSolutions",
     initialState: {},
     reducers: {},
+    extraReducers: () => {},
 })
 
 export const selectGetAllSolutions = (state) => state.getAllSolutions;

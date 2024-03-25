@@ -3,8 +3,8 @@ import { Outlet } from "react-router-dom";
 
 const HomeLayout = () => {
   return (
-    <div>
-        <div>Header</div>
+    <div className='bg-gray-700 text-white h-screen'>
+        <div className='text-3xl'>Header</div>
         <div><Outlet /></div>
     </div>
   )
