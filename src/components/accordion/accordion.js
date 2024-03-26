@@ -36,48 +36,54 @@ function Accordion() {
   ];
 
   return (
-      <div className="w-[100%] m-auto bg-[#F3F4F6] p-8 rounded-lg shadow-md flex flex-col items-center">
-        <h2 className="text-center text-[25px] mb-6 font-bold text-black">
-          Frequently Asked Questions
-        </h2>
-        {questions.map((q) => (
-          <div key={q.id} className="mb-4 last:mb-0">
-            <button
-              className={`w-[340px] sm:w-[500px] h-[26px] text-black text-left text-xl focus:outline-none p-4 bg-[#F9FAFC] ${
-                activeQuestion === q.id ? "rounded-t-lg" : "rounded-lg"
-              } shadow-md flex justify-between items-center`}
-              onClick={() => {
-                setActiveQuestions(activeQuestion === q.id ? null : q.id);
-              }}
+    <div className="w-[100%] m-auto bg-third p-8 rounded-lg shadow-md flex flex-col items-center">
+      <h2 className="text-center text-[25px] mb-6 font-bold text-black">
+        Frequently Asked Questions
+      </h2>
+      {questions.map((q) => (
+        <div key={q.id} className="mb-4 last:mb-0">
+          <button
+            className={`w-[340px] sm:w-[500px] h-[26px] text-black text-left text-xl focus:outline-none p-4 bg-secondary ${
+              activeQuestion === q.id ? "rounded-t-lg" : "rounded-lg"
+            } shadow-md flex justify-between items-center`}
+            onClick={() => {
+              setActiveQuestions(activeQuestion === q.id ? null : q.id);
+            }}
+          >
+            <p
+              className={`text-[12px] ${
+                activeQuestion === q.id ? "font-bold" : ""
+              }`}
             >
-              <p className={`text-[12px] ${activeQuestion === q.id ? 'font-bold' : ''}`}>{q.question}</p>
-              <div className="w-[16px] h-[16px] bg-[#F3F4F6] rounded-[50%] flex justify-center items-center">
-                {activeQuestion === q.id ? (
-                  <TiMinus className="fill-current  rounded-[14px] text-[#581845]" />
-                ) : (
-                  <TiPlus className="fill-current  rounded-[14px] text-[#581845]" />
-                )}
-              </div>
-            </button>
-            <AnimatePresence>
-              {activeQuestion === q.id && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className=" text-gray-600 "
-                >
-                  <div className="w-full m-0 bg-[#F9FAFC] rounded-b-lg">
-                    <p className="pl-4 text-[12px] max-w-[272px] leading-[14px] pt-4 pb-2">
-                      {q.answer}
-                    </p>
-                  </div>
-                </motion.div>
+              {q.question}
+            </p>
+            <div className="w-[16px] h-[16px] bg-third rounded-[50%] flex justify-center items-center">
+              {activeQuestion === q.id ? (
+                <TiMinus className="fill-current  rounded-[14px] text-primary" />
+              ) : (
+                <TiPlus className="fill-current  rounded-[14px] text-primary" />
               )}
-            </AnimatePresence>
-          </div>
-        ))}
-      </div>
+            </div>
+          </button>
+          <AnimatePresence>
+            {activeQuestion === q.id && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className=" text-gray-600 "
+              >
+                <div className="w-full m-0 bg-secondary rounded-b-lg">
+                  <p className="pl-4 text-[12px] max-w-[272px] leading-[14px] pt-4 pb-2">
+                    {q.answer}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
   );
 }
 
