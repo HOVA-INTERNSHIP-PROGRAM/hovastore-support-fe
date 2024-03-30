@@ -35,8 +35,8 @@ function Accordions() {
   ];
 
   return (
-    <div className="w-[100%] m-auto  p-8 flex flex-col items-center">
-      <h2 className="text-center text-[25px] mb-6 font-bold text-black">
+    <div id="FAQ" className="w-[100%] m-auto  p-8 flex flex-col items-center">
+      <h2 className="text-center text-[25px] mb-6 font-bold text-primary">
         Frequently Asked Questions
       </h2>
       {questions.map((q) => (

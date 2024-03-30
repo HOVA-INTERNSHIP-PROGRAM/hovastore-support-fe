@@ -15,8 +15,8 @@ function HeroSection() {
         </div>
         <div className="flex items-center gap-6">
           <div className="font-semibold hidden lg:block">
-            <Link to="#" className="hover:opacity-80">
-              FAQS
+            <Link to="#FAQ" className="hover:opacity-80">
+              FAQ
             </Link>
           </div>
           <div className="relative lg:hidden">
