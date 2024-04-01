@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomeLayout from '../layouts/HomeLayout';
 import Home from '../pages/Home';
-
 const AppRoutes = () => {
     return (
         <Router>
