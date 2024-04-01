@@ -45,9 +45,6 @@ const Home = () => {
       <div className="bg-secondaryLight w-full ">
         <Accordions />
       </div>
-      <div>
-        <CTA />
-      </div>
     </div>
   );
 };
