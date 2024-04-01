@@ -12,6 +12,22 @@ module.exports = {
       fontFamily: {
         Lato: ["Lato"],
       },
+      width: {
+        620: "620px",
+      },
+      height: {
+        620: "620px",
+      },
+      width: {
+        486: "486px",
+      },
+      height: {
+        486: "486px",
+      },
+      screens: {
+        sml: "320px",
+        mdm: "620px",
+      },
     },
   },
   plugins: [],
