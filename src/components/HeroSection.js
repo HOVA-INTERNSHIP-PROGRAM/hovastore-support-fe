@@ -11,7 +11,9 @@ function HeroSection() {
     <div className="lg:py-20 lg:px-28 py-10 px-6 bg-primary text-white">
       <nav className="flex items-center justify-between">
         <div className="cursor-pointer">
-          <img src={HovaLogo} alt="Hova_ai_Logo" className="w-20" />
+          <Link to="/">
+            <img src={HovaLogo} alt="Hova_ai_Logo" className="w-20" />
+          </Link>
         </div>
         <div className="flex items-center gap-6">
           <div className="font-semibold hidden lg:block">

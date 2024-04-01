@@ -6,13 +6,17 @@ import Login from "../pages/Login";
 import Forgot from "../pages/Forgot";
 import Register from "../pages/Register";
 import SlugPage from "../pages/SlugPage";
+import SlugLayout from "../layouts/SlugLayout";
+
 const AppRoutes = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route path="" element={<Home />} />
-          <Route path="/:title" element={<SlugPage />} />
+          <Route path="/:title" element={<SlugLayout />}>
+            <Route path="" element={<SlugPage />} />
+          </Route>
           {/* Add many routes as you want */}
         </Route>
         <Route path="/login" element={<Login />} />
