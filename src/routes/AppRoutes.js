@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import Forgot from "../pages/Forgot";
+import Register from "../pages/Register";
 
 const AppRoutes = () => {
   return (
@@ -13,6 +15,8 @@ const AppRoutes = () => {
           {/* Add many routes as you want */}
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<Forgot />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );
