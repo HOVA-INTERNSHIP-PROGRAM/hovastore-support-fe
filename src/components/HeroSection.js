@@ -77,7 +77,7 @@ function HeroSection() {
         </div>
         {/* search button */}
         <div className="hidden md:block">
-          <Button title="Search" styles={`bg-secondaryLight py-[0.8rem] hover:text-primary hover:bg-secondaryLight scale-100 `} />
+          <Button title="Search" styles={`bg-secondaryLight py-[0.8rem] hover:!text-primary hover:bg-secondaryLight scale-100 `} />
         </div>
       </div>
     </div>

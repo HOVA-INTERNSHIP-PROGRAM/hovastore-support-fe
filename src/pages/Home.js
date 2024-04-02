@@ -5,6 +5,7 @@ import CTA from "../components/CTA";
 import { useSelector, useDispatch } from "react-redux"
 import { selectGetAllSolutions, getAllSolutions, getSolutionsStatus, getSolutionsError } from "../features/solutions/getAllSolutionsSlice";
 import Loading from "../components/Loading";
+import NoData from "../components/NoData";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Home = () => {
   if (solutionsStatus === "loading") {
     contentToDisplay = <Loading />
   } else if (solutionsStatus === "succeeded") {
-    contentToDisplay = solutions.map((card, index) => (
+    contentToDisplay = solutions.length > 0 ? solutions.map((card, index) => (
       <CardSolution
         key={index}
         icon={card?.icon}
@@ -31,6 +32,7 @@ const Home = () => {
         description={card?.description}
       />
     ))
+      : <NoData />
   } else if (solutionsStatus === "failed") {
     contentToDisplay = <p>{solutionsError}</p>;
   }

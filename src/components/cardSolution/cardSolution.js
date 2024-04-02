@@ -6,7 +6,7 @@ function CardSolution({ icon, title, description }) {
         <div className="flex justify-center p-1">
         <div className="flex justify-center items-center rounded-full bg-secondaryLight w-16 h-16 text-primary font-bold">
         <div className="flex justify-center items-center w-8 h-8">
-            <img src={icon} alt={title} />
+            <img src={icon || "/payment.png"} alt={title} />
         </div>
       </div>
         </div>
