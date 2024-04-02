@@ -4,8 +4,8 @@ import CardSolution from "../components/cardSolution/cardSolution";
 import CTA from "../components/CTA";
 import { useSelector, useDispatch } from "react-redux"
 import { selectGetAllSolutions, getAllSolutions, getSolutionsStatus, getSolutionsError } from "../features/solutions/getAllSolutionsSlice";
-import Loading from "../components/Loading";
 import NoData from "../components/NoData";
+import Skeleton from "../components/Skeleton";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Home = () => {
 
   let contentToDisplay = "";
   if (solutionsStatus === "loading") {
-    contentToDisplay = <Loading />
+    contentToDisplay = <Skeleton />
   } else if (solutionsStatus === "succeeded") {
     contentToDisplay = solutions.length > 0 ? solutions.map((card, index) => (
       <CardSolution
