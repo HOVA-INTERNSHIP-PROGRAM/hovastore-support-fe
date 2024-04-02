@@ -22,7 +22,9 @@ const Home = () => {
 
   let contentToDisplay = "";
   if (solutionsStatus === "loading") {
-    contentToDisplay = <Skeleton />
+    contentToDisplay = Array.from({ length: 9 }, (_, index) => (
+      <Skeleton key={index} />
+    ))
   } else if (solutionsStatus === "succeeded") {
     contentToDisplay = solutions.length > 0 ? solutions.map((card, index) => (
       <CardSolution
