@@ -6,7 +6,7 @@ const initialState = {
     loading: false,
     error: null,
 }
-
+// getAllBooks
 export const getAllBooks = createAsyncThunk(
     "books/get",
     async () => {
@@ -21,12 +21,31 @@ export const getAllBooks = createAsyncThunk(
         }
     })
 
+// getOnebook
+
+export const getOnebook = createAsyncThunk(
+    "books/getOnebook",
+    async (id) => {
+        try {
+            const response = await Bookservice.get(id);
+            return response.data?.data;
+        } catch (err) {
+            if (!err.response) {
+                throw err;
+            }
+            Promise.reject(err.response);
+        }
+    })
+
+
 export const getAllBooksSlice = createSlice({
     name: "books",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
         builder
+
+            // AllBooks
             .addCase(getAllBooks.pending, (state) => {
                 state.loading = true;
             })
@@ -39,6 +58,21 @@ export const getAllBooksSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload;
             })
+
+            // SingleBook
+            .addCase(getOnebook.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getOnebook.fulfilled, (state, action) => {
+                state.loading = false;
+                state.books = action.payload;
+                state.error = null;
+            })
+            .addCase(getOnebook.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+
     },
 })
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaEnvelope } from "react-icons/fa"
 import Input from "../components/UI/HsInput";
 import Button from "../components/UI/HsButton";
 

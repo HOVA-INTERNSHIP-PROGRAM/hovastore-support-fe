@@ -51,18 +51,19 @@ function Accordions() {
 
         {activeQuestion === q?._id && (
           <div
-            className=" text-gray-600 "
+            className="shadow-md "
           >
 
             <div className="cursor-pointer mx-auto !w-full p-4 text-black text-left text-xl focus:outline-none  hover:scale-105 transition ease-out duration-200 hover:shadow-xl  bg-secondary">
-              <p className="pl-4 text-sm w-full leading-[14px] pt-4 pb-2">
-                {q?.answers.map((answer) => <div className="flex flex-col gap-1 "> <p>{answer?.step}</p> <p>{answer?.stepDescription} </p> </div>)}
+              <p className="pl-4 text-sm w-full leading-[14px] text-gray-500 pt-4 pb-2">
+                {q?.answers.map((answer, index) => <div className="flex flex-col gap-1 " key={index}> <p>{answer?.step}</p> <p>{answer?.stepDescription} </p> </div>)}
               </p>
             </div>
-          </div>
-        )}
+          </div >
+        )
+        }
 
-      </div>
+      </div >
     ))
   }
   else {

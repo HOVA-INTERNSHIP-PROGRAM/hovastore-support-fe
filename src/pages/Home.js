@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectGetAllBooks, getAllBooks, getBooksStatus, getBooksError } from "../features/solutions/booksSlice";
+import { selectGetAllBooks, getAllBooks, getOnebook, getBooksStatus, getBooksError } from "../features/solutions/booksSlice";
 import Accordions from "../components/Accordions";
 import CardSolution from "../components/cardSolution/cardSolution";
 import NoData from "../components/NoData";
@@ -15,6 +15,12 @@ const Home = () => {
     dispatch(getAllBooks());
   }, [dispatch]);
 
+
+  const getSingleBook = async (id) => {
+    await dispatch(getOnebook(id));
+  }
+
+
   let content;
   if (error) {
     content = <p className="text-base text-red-700">Error: {error}</p>;
@@ -24,9 +30,12 @@ const Home = () => {
     content = books.map((book, index) => (
       <CardSolution
         key={index}
-        icon={book.icon}
-        title={book.name}
-        description={book.description}
+        icon={book?.icon}
+        title={book?.name}
+        description={book?.description}
+        click={() => {
+          getSingleBook(book?._id)
+        }}
       />
     ));
   } else {

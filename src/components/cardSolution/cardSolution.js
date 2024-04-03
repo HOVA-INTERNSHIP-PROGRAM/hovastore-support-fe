@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CardSolution({ icon, title, description }) {
+function CardSolution({ icon, title, description, click }) {
   return (
     <Link
-      to={`/solution/${title}`}
+      onClick={click}
+      to={`Books/${title}`}
       role="status"
       className="bg-secondary shadow-md rounded-md p-5 hover:scale-105 transition ease-out duration-200 hover:shadow-xl cursor-pointer"
     >
