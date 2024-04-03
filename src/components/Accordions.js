@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { TiPlus, TiMinus } from "react-icons/ti";
 
 function Accordions() {
@@ -35,24 +34,22 @@ function Accordions() {
   ];
 
   return (
-    <div id="FAQ" className="w-[100%] m-auto  p-8 flex flex-col items-center">
-      <h2 className="text-center text-[25px] mb-6 font-bold text-primary">
+    <div id="FAQ" className="w-full m-auto  p-8 flex flex-col items-center">
+      <h2 className="text-center text-lg mb-6 font-bold text-primary">
         Frequently Asked Questions
       </h2>
       {questions.map((q) => (
         <div key={q.id} className="mb-4 last:mb-0">
           <button
-            className={`w-[340px] sm:w-[500px] h-[26px] text-black text-left text-xl focus:outline-none p-4 bg-secondary ${
-              activeQuestion === q.id ? "rounded-t-lg" : "rounded-lg"
-            } shadow-md flex justify-between items-center`}
+            className={`w-[340px] sm:w-[500px] p-4 text-black text-left text-xl focus:outline-none  bg-secondary ${activeQuestion === q.id ? "rounded-t-lg" : "rounded-lg"
+              } shadow-md flex justify-between items-center`}
             onClick={() => {
               setActiveQuestions(activeQuestion === q.id ? null : q.id);
             }}
           >
             <p
-              className={`text-[12px] ${
-                activeQuestion === q.id ? "font-bold" : ""
-              }`}
+              className={`text-sm ${activeQuestion === q.id ? "font-bold" : ""
+                }`}
             >
               {q.question}
             </p>
@@ -64,22 +61,19 @@ function Accordions() {
               )}
             </div>
           </button>
-          <AnimatePresence>
-            {activeQuestion === q.id && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                className=" text-gray-600 "
-              >
-                <div className="w-full m-0 bg-secondary rounded-b-lg">
-                  <p className="pl-4 text-[12px] max-w-[272px] leading-[14px] pt-4 pb-2">
-                    {q.answer}
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+
+          {activeQuestion === q.id && (
+            <div
+              className=" text-gray-600 "
+            >
+              <div className="w-full m-0 bg-secondary rounded-b-lg">
+                <p className="pl-4 text-[12px] max-w-[272px] leading-[14px] pt-4 pb-2">
+                  {q.answer}
+                </p>
+              </div>
+            </div>
+          )}
+
         </div>
       ))}
     </div>

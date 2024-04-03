@@ -3,7 +3,7 @@ import solutionsReducer from "./features/solutions/getAllSolutionsSlice";
 
 const store = configureStore({
     reducer: {
-        solutions: solutionsReducer,
+        books: solutionsReducer,
     },
 });
 

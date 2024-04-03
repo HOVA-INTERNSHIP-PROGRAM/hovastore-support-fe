@@ -1,6 +1,6 @@
 import React from "react";
 
-function Skeleton({title}) {
+function Skeleton({ title }) {
   return (
     <div role="status" className="bg-secondary shadow-md rounded-md p-5 hover:scale-105 transition ease-out duration-200 hover:shadow-xl">
       <div className="flex justify-center p-1">

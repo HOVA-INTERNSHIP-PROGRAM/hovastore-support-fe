@@ -1,15 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import solutionService from "../../services/solution.service";
 
-
 const initialState = {
-    solutions: [],
-    status: "idle",
-    error: null
+    books: [],
+    loading: false,
+    error: null,
 }
 
 export const getAllSolutions = createAsyncThunk(
-    "solutions/get",
+    "books/get",
     async () => {
         try {
             const response = await solutionService.getAll();
@@ -23,27 +22,28 @@ export const getAllSolutions = createAsyncThunk(
     })
 
 export const getAllSolutionsSlice = createSlice({
-    name: "solutions",
+    name: "books",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(getAllSolutions.pending, (state) => {
-                state.status = 'loading';
+                state.loading = true;
             })
             .addCase(getAllSolutions.fulfilled, (state, action) => {
-                state.status = "succeeded";
-                state.solutions = action.payload;
+                state.loading = false;
+                state.books = action.payload;
+                state.error = null;
             })
             .addCase(getAllSolutions.rejected, (state, action) => {
-                state.status = 'failed';
-                state.error = action.error.message;
+                state.loading = false;
+                state.error = action.payload;
             })
     },
 })
 
-export const selectGetAllSolutions = (state) => state.solutions.solutions;
-export const getSolutionsStatus = (state) => state.solutions.status;
-export const getSolutionsError = (state) => state.solutions.error;
+export const selectGetAllSolutions = (state) => state.books.books;
+export const getSolutionsStatus = (state) => state.books.loading;
+export const getSolutionsError = (state) => state.books.error;
 export default getAllSolutionsSlice.reducer;
 

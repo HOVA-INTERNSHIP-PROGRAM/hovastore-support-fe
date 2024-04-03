@@ -1,50 +1,45 @@
 import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectGetAllSolutions, getAllSolutions, getSolutionsStatus, getSolutionsError } from "../features/solutions/getAllSolutionsSlice";
 import Accordions from "../components/Accordions";
 import CardSolution from "../components/cardSolution/cardSolution";
 import CTA from "../components/CTA";
-import { useSelector, useDispatch } from "react-redux"
-import { selectGetAllSolutions, getAllSolutions, getSolutionsStatus, getSolutionsError } from "../features/solutions/getAllSolutionsSlice";
 import NoData from "../components/NoData";
-import Skeleton from "../components/Skeleton";
+import Skeleton from "../components/skeleton/solution.Skeleton";
 
 const Home = () => {
   const dispatch = useDispatch();
   const solutions = useSelector(selectGetAllSolutions);
-  const solutionsStatus = useSelector(getSolutionsStatus);
-  const solutionsError = useSelector(getSolutionsError);
+  const loading = useSelector(getSolutionsStatus);
+  const error = useSelector(getSolutionsError);
+
   useEffect(() => {
-    if (solutionsStatus === "idle") {
-      dispatch(getAllSolutions());
-    }
-  }, [solutionsStatus, dispatch])
+    dispatch(getAllSolutions());
+  }, [dispatch]);
 
-  // getAllSolutions
-
-  let contentToDisplay = "";
-  if (solutionsStatus === "loading") {
-    contentToDisplay = Array.from({ length: 9 }, (_, index) => (
-      <Skeleton key={index} />
-    ))
-  } else if (solutionsStatus === "succeeded") {
-    contentToDisplay = solutions.length > 0 ? solutions.map((card, index) => (
+  let content;
+  if (error) {
+    content = <p className="text-base text-red-700">Error: {error}</p>;
+  } else if (loading) {
+    content = Array.from({ length: 9 }, (_, index) => <Skeleton key={index} />);
+  } else if (solutions.length > 0) {
+    content = solutions.map((solution, index) => (
       <CardSolution
         key={index}
-        icon={card?.icon}
-        title={card?.name}
-        description={card?.description}
+        icon={solution.icon}
+        title={solution.name}
+        description={solution.description}
       />
-    ))
-      : <NoData />
-  } else if (solutionsStatus === "failed") {
-    contentToDisplay = <p>{solutionsError}</p>;
+    ));
+  } else {
+    content = <NoData />;
   }
+
   return (
     <div>
-      <div>
-        <div className="bg-secondaryLight flex justify-center items-center">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 w-3/4 gap-5 pt-10 pb-8">
-            {contentToDisplay}
-          </div>
+      <div className="bg-secondaryLight flex justify-center items-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 w-3/4 gap-5 pt-10 pb-8">
+          {content}
         </div>
       </div>
       <div className="bg-secondaryLight">
