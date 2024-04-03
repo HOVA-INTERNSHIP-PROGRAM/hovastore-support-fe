@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectGetAllSolutions, getAllSolutions, getSolutionsStatus, getSolutionsError } from "../features/solutions/getAllSolutionsSlice";
+import { selectGetAllBooks, getAllBooks, getBooksStatus, getBooksError } from "../features/solutions/booksSlice";
 import Accordions from "../components/Accordions";
 import CardSolution from "../components/cardSolution/cardSolution";
 import CTA from "../components/CTA";
@@ -9,12 +9,12 @@ import Skeleton from "../components/skeleton/solution.Skeleton";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const solutions = useSelector(selectGetAllSolutions);
-  const loading = useSelector(getSolutionsStatus);
-  const error = useSelector(getSolutionsError);
+  const books = useSelector(selectGetAllBooks);
+  const loading = useSelector(getBooksStatus);
+  const error = useSelector(getBooksError);
 
   useEffect(() => {
-    dispatch(getAllSolutions());
+    dispatch(getAllBooks());
   }, [dispatch]);
 
   let content;
@@ -22,13 +22,13 @@ const Home = () => {
     content = <p className="text-base text-red-700">Error: {error}</p>;
   } else if (loading) {
     content = Array.from({ length: 9 }, (_, index) => <Skeleton key={index} />);
-  } else if (solutions.length > 0) {
-    content = solutions.map((solution, index) => (
+  } else if (books.length > 0) {
+    content = books.map((book, index) => (
       <CardSolution
         key={index}
-        icon={solution.icon}
-        title={solution.name}
-        description={solution.description}
+        icon={book.icon}
+        title={book.name}
+        description={book.description}
       />
     ));
   } else {
@@ -42,7 +42,7 @@ const Home = () => {
           {content}
         </div>
       </div>
-      <div className="bg-secondaryLight">
+      <div className="bg-secondaryLight w-full ">
         <Accordions />
       </div>
       <div>

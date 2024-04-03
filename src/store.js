@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import solutionsReducer from "./features/solutions/getAllSolutionsSlice";
+import booksReducer from "./features/solutions/booksSlice";
+import questionReducer from "./features/question/questionSlice";
 
 const store = configureStore({
     reducer: {
-        books: solutionsReducer,
+        books: booksReducer,
+        questions: questionReducer,
     },
 });
 
