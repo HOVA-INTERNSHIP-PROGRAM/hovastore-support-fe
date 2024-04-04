@@ -1,14 +1,14 @@
 import React from "react";
-import { useParams } from "react-router";
-import Breadcrumbs from "../components/Breadcrumbs";
 
 function SlugPage() {
-  const { title } = useParams();
   return (
-    <div className="lg:py-20 lg:px-28 py-10 px-6  bg-secondaryLight">
-      <Breadcrumbs />
+    <div className="bg-white">
+      Generate Lorem Ipsum placeholder text for use in your graphic, print and
+      web layouts, and discover plugins for your favorite writing, design and
+      blogging tools. Explore the origins, history and meaning of the famous
+      passage, and learn how Lorem Ipsum went from scrambled Latin passage to
+      ubiqitous ..
     </div>
   );
 }
-
 export default SlugPage;

@@ -38,7 +38,7 @@ function Login() {
             />
             <div className="mt-6 mdl:mt-[44px] flex flex-row justify-center w-full text-[20px] md:text-[24px]">
               <Link to="/login" className="hover:underline text-[#3558D4]">
-              have account  ? Login 
+                have account  ? Login
               </Link>
             </div>
           </div>

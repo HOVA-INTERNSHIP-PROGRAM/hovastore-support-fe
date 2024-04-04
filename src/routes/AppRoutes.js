@@ -14,7 +14,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route path="" element={<Home />} />
-          <Route path="/:title" element={<SlugLayout />}>
+          <Route path="solution/:title" element={<SlugLayout />}>
             <Route path="" element={<SlugPage />} />
           </Route>
           {/* Add many routes as you want */}

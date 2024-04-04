@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import Input from "../components/UI/HsInput";
 import Button from "../components/UI/HsButton";
 
-import { FaEnvelope } from "react-icons/fa";
-
 function Login() {
   return (
     <div className="bg-secondary w-full h-dvh flex justify-center items-center">
@@ -25,8 +23,8 @@ function Login() {
               title={`Submit`}
               styles={`w-full !scale-100 mt-6 mdl:mt-12 bg-primary text-white`}
             />
-            <div className="mt-6 mdl:mt-[44px] flex flex-row justify-center w-full text-[20px] md:text-[24px]">
-              <Link to="/login" className="hover:underline text-[#3558D4]">
+            <div className="mt-[44px] flex flex-row items-center justify-center w-full text-[20px]">
+              <Link to="/login" className="hover:underline">
                 back to login
               </Link>
             </div>
