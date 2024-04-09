@@ -3,7 +3,7 @@ import HovaLogo from "../assets/images/logo_hova.png";
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-import HsButton from "../components/UI/HsButton";
+import HSButton from "./UI/HSButton";
 
 function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,7 +79,7 @@ function HeroSection() {
         </div>
         {/* search button */}
         <div className="hidden md:block">
-          <HsButton title="Search" styles={`bg-secondaryLight py-[0.8rem] hover:!text-primary hover:bg-secondaryLight scale-100 `} />
+          <HSButton title="Search" styles={`bg-secondaryLight py-[0.8rem] hover:!text-primary hover:bg-secondaryLight scale-100 `} />
         </div>
       </div>
     </div>

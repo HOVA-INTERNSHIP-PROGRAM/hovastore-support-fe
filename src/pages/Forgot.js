@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaEnvelope } from "react-icons/fa"
-import Input from "../components/UI/HsInput";
-import Button from "../components/UI/HsButton";
+import HSInput from "../components/UI/HSInput";
+import HSButton from "../components/UI/HSButton";
 
 function Login() {
   return (
@@ -13,14 +13,14 @@ function Login() {
           <div className="w-[95%] md:w-[85%] h-full flex flex-col justify-start items-center">
             <h2 className="text-[40px] md:text-[48px] font-extrabold text-primary">Forgot Password?</h2>
             <div className="mt-6 mdl:mt-[34px] w-full">
-              <Input
+              <HSInput
                 type="input"
                 placeholder="Email"
                 text="password"
                 icon={<FaEnvelope />}
               />
             </div>
-            <Button
+            <HSButton
               title={`Submit`}
               styles={`w-full !scale-100 mt-6 mdl:mt-12 bg-primary text-white`}
             />

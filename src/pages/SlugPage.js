@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { selectGetAllBooks } from "../features/solutions/booksSlice";
-import Input from "../components/UI/HsInput"
-import Button from "../components/UI/HsButton"
+import HSInput from "../components/UI/HSInput"
+import HSButton from "../components/UI/HSButton"
 function SlugPage() {
   const book = useSelector(selectGetAllBooks);
   console.log(book)
@@ -37,12 +37,12 @@ function SlugPage() {
 
         <form className="flex flex-col gap-2">
 
-          <Input label="Name" placeholder="John Doe" type="input" style={`bg-white`} />
-          <Input label="E-mail" placeholder="johnDoe@gmail.com" style={`bg-white`} type="input" />
-          <Input label="Feedback" placeholder="Comments" />
+          <HSInput label="Name" placeholder="John Doe" type="input" style={`bg-white`} />
+          <HSInput label="E-mail" placeholder="johnDoe@gmail.com" style={`bg-white`} type="input" />
+          <HSInput label="Feedback" placeholder="Comments" />
           <div className=" flex gap-3 items-center capitalize">
-            <Button title="send"  styles={`bg-primary text-white`}/>
-            <Button title="cancel" styles={`bg-primary text-white`} />
+            <HSButton title="send"  styles={`bg-primary text-white`}/>
+            <HSButton title="cancel" styles={`bg-primary text-white`} />
           </div>
 
         </form>

@@ -1,4 +1,4 @@
-const Input = ({
+const HSInput = ({
   id,
   onBlur,
   values,
@@ -47,4 +47,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default HSInput;

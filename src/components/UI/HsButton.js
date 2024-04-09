@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Button = ({ path, click, title, icon, styles , target , onChange }) => {
+const HSButton = ({ path, click, title, icon, styles , target , onChange }) => {
   return (
     <Link
       target={target}
@@ -16,4 +16,4 @@ const Button = ({ path, click, title, icon, styles , target , onChange }) => {
   );
 };
 
-export default Button;
+export default HSButton;

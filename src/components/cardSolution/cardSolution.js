@@ -5,7 +5,7 @@ function CardSolution({ icon, title, description, click }) {
   return (
     <Link
       onClick={click}
-      to={`Books/${title}`}
+      to={`/${title}`}
       role="status"
       className="bg-secondary shadow-md rounded-md p-5 hover:scale-105 transition ease-out duration-200 hover:shadow-xl cursor-pointer"
     >
