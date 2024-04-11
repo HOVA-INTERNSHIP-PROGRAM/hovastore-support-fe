@@ -3,7 +3,7 @@ import HovaLogo from "../assets/images/logo_hova.png";
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Button from "../components/UI/Button";
+import HsButton from "../components/UI/HsButton";
 
 function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,19 +65,19 @@ function HeroSection() {
       {/* Search Wrappr */}
       <div className="flex lg:justify-center items-center gap-3">
         {/* search inputs */}
-        <div className="bg-secondaryLight flex justify-start items-center rounded lg:w-96 w-full">
+        <div className="bg-secondaryLight  flex justify-start items-center rounded lg:w-96 w-full">
           <div>
             <IoIosSearch className="text-3xl text-primary ml-3 cursor-pointer" />
           </div>
           <input
             type="text"
-            className="w-full p-3 border-0 outline-none text-black bg-transparent shadow-sm placeholder:text-xl"
+            className="w-full px-6 py-3 border-0 outline-none text-black bg-transparent shadow-sm placeholder:text-xl"
             placeholder="Search knowledge you want"
           />
         </div>
         {/* search button */}
         <div className="hidden md:block">
-          <Button name="Search" />
+          <HsButton title="Search" styles={`bg-secondaryLight py-[0.8rem] hover:!text-primary hover:bg-secondaryLight scale-100 `} />
         </div>
       </div>
     </div>

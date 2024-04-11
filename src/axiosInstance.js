@@ -1,9 +1,7 @@
 import axios from "axios";
 
 const http = axios.create({
-  baseURL: "https://leave-backend.onrender.com/api/v1",
-  // baseURL: "http://localhost:3005/api/v1",
-  // baseURL: "https://nx-leave-backend.cleverapps.io/api/v1",
+  baseURL: process.env.REACT_APP_API_URL,
 });
 
 const requestHandler = (request) => {
