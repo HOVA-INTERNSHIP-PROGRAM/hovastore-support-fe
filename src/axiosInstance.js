@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const http = axios.create({
-  baseURL: "https://hovastore-support-be.onrender.com/api/v1",
+  baseURL: process.env.REACT_APP_API_URL,
 });
 
 const requestHandler = (request) => {
