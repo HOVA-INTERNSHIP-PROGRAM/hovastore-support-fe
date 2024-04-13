@@ -58,7 +58,7 @@ function HeroSection() {
       {/* Typography  */}
       <div className="flex flex-col items-center mt-10 lg:mt-20 mb-6 lg:mb-10">
         <h1 className="font-bold text-3xl lg:text-4xl mb-2 text-center">
-          Welcome to HovaStore
+        Welcome to HovaStore Support
         </h1>
         <p className="text-lg lg:text-3xl font-light text-center text-secondaryLight">
           Knowledge hub your ultimate resource for expert help and information

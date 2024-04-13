@@ -15,7 +15,7 @@ const HSInput = ({
       <h1 className="text-sm font-medium">{label}</h1>
       {type === "input" ? (
         <div
-          className={`${style} relative text-primary duration-100 outline-none justify-between flex items-center gap-6 px-2  w-full rounded-md font-semibold border-2 group-hover:border-primary`}
+          className={`${style} relative text-primary  duration-100 outline-none justify-between flex items-center gap-6 px-2  w-full rounded-md font-semibold border-2 group-hover:border-primary`}
         >
           <p>{icon}</p>
           <input
@@ -25,7 +25,7 @@ const HSInput = ({
             id={id}
             onChange={onChange}
             placeholder={placeholder}
-            className="w-full h-full py-3 outline-none"
+            className="w-full h-full bg-transparent py-3 outline-none"
           />
         </div>
       ) : (

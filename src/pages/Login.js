@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HSInput from "../components/UI/HSInput";
 import HSButton from "../components/UI/HSButton";
 import { FaUser, FaLock } from "react-icons/fa";
@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { getLoginStatus, makeLogin } from "../features/login/loginSlice";
 
 function Login() {
-
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const loading = useSelector(getLoginStatus)
 
@@ -19,8 +19,12 @@ function Login() {
           email: formik.values.email,
           password: formik.values.password,
         };
-        dispatch(makeLogin(formData));
-        formik.resetForm();
+
+        const response = dispatch(makeLogin(formData));
+        if (response) {
+          formik.resetForm();
+          navigate("/dashboard");
+        }
 
       }
     } catch (error) {
