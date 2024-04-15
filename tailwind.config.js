@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#581845",
-        secondary: "#F3F4F6",
+        secondary: "#F9FAFC",
         secondaryLight: "#F3F4F6",
         black: "#000000",
       },
@@ -13,20 +13,20 @@ module.exports = {
         Lato: ["Lato"],
       },
       width: {
-        '620': '620px',
+        620: "620px",
       },
       height: {
-        '620': '620px',
+        620: "620px",
       },
       width: {
-        '486': '486px',
+        486: "486px",
       },
       height: {
-        '486': '486px',
+        486: "486px",
       },
       screens: {
-        'sml': '320px',
-        'mdm': '620px',
+        sml: "320px",
+        mdm: "620px",
       },
     },
   },
