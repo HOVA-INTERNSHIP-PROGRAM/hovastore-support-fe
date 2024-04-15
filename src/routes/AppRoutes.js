@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Forgot from "../pages/Forgot";
 import Register from "../pages/Register";
+import Artical from "../pages/Artical";
 
 const AppRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route path="" element={<Home />} />
+          <Route path="/:title" element={<Artical />} />
           {/* Add many routes as you want */}
         </Route>
         <Route path="/login" element={<Login />} />
