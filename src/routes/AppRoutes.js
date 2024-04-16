@@ -8,6 +8,8 @@ import Register from "../pages/Register";
 import Artical from "../pages/Artical";
 import SlugLayout from "../layouts/SlugLayout";
 import SlugPage from "../pages/SlugPage";
+import DashLayout from "../layouts/DashLayout";
+import Dashboard from "../pages/dashboard/Dashboard";
 
 const AppRoutes = () => {
   return (
@@ -24,6 +26,12 @@ const AppRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<Forgot />} />
         <Route path="/register" element={<Register />} />
+
+        {/* --------------- Dashboard routes --------------- */}
+        <Route path="/dashboard" element={<DashLayout />}>
+          <Route index element={<Dashboard />} />
+        </Route>
+
       </Routes>
     </Router>
   );
