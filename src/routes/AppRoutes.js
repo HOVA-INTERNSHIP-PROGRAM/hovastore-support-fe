@@ -5,6 +5,9 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Forgot from "../pages/Forgot";
 import Register from "../pages/Register";
+import Artical from "../pages/Artical";
+import SlugLayout from "../layouts/SlugLayout";
+import SlugPage from "../pages/SlugPage";
 
 const AppRoutes = () => {
   return (
@@ -12,6 +15,10 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route path="" element={<Home />} />
+          <Route path="/:title" element={<Artical />} />
+          <Route path="/:title/:article" element={<SlugLayout />}>
+            <Route path="" element={<SlugPage />} />
+          </Route>
           {/* Add many routes as you want */}
         </Route>
         <Route path="/login" element={<Login />} />
