@@ -1,8 +1,8 @@
 import React from "react";
 import StepImg from "../assets/images/loginImage.png";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
-import HsInput from "../components/UI/HsInput";
-import HsButton from "../components/UI/HsButton";
+import HSInput from "../components/UI/HSInput";
+import HSButton from "../components/UI/HSButton";
 // import { FaUser, FaLock } from "react-icons/fa";
 
 function SlugPage() {
@@ -80,7 +80,7 @@ function SlugPage() {
             <label for="Names">
               Names <span className="text-red-600">*</span>
             </label>
-            <HsInput
+            <HSInput
               type="input"
               placeholder="Enter your Names"
               id="Names"
@@ -91,17 +91,17 @@ function SlugPage() {
             <label for="Email">
               Email <span className="text-red-600">*</span>
             </label>
-            <HsInput type="input" placeholder="example@gmail.com" id="Email" />
+            <HSInput type="input" placeholder="example@gmail.com" id="Email" />
           </div>
           <div>
             <label for="Feedback">
               Feedback <span className="text-red-600">*</span>
             </label>
-            <HsInput type="textarea" placeholder="comments..." id="Feedback" />
+            <HSInput type="textarea" placeholder="comments..." id="Feedback" />
           </div>
           <div className="flex items-center gap-6">
-            <HsButton title="Send" />
-            <HsButton title="Cancel" />
+            <HSButton title="Send" />
+            <HSButton title="Cancel" />
           </div>
         </form>
       </div>
