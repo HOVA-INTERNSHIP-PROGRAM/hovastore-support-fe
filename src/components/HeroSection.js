@@ -3,16 +3,16 @@ import HovaLogo from "../assets/images/logo_hova.png";
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-import HsButton from "../components/UI/HsButton";
+import HSButton from "./UI/HSButton";
 
 function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="lg:py-20 lg:px-28 py-10 px-6 bg-primary text-white">
       <nav className="flex items-center justify-between">
-        <div className="cursor-pointer">
+        <Link to="/" className="cursor-pointer">
           <img src={HovaLogo} alt="Hova_ai_Logo" className="w-20" />
-        </div>
+        </Link>
         <div className="flex items-center gap-6">
           <div className="font-semibold hidden lg:block">
             <Link to="#FAQ" className="hover:opacity-80">
@@ -56,7 +56,7 @@ function HeroSection() {
       {/* Typography  */}
       <div className="flex flex-col items-center mt-10 lg:mt-20 mb-6 lg:mb-10">
         <h1 className="font-bold text-3xl lg:text-4xl mb-2 text-center">
-          Welcome to HovaStore
+        Welcome to HovaStore Support
         </h1>
         <p className="text-lg lg:text-3xl font-light text-center text-secondaryLight">
           Knowledge hub your ultimate resource for expert help and information
@@ -77,7 +77,7 @@ function HeroSection() {
         </div>
         {/* search button */}
         <div className="hidden md:block">
-          <HsButton title="Search" styles={`bg-secondaryLight py-[0.8rem] hover:!text-primary hover:bg-secondaryLight scale-100 `} />
+          <HSButton title="Search" styles={`bg-secondaryLight py-[0.8rem] hover:!text-primary hover:bg-secondaryLight scale-100 `} />
         </div>
       </div>
     </div>
