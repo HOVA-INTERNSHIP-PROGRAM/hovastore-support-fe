@@ -4,7 +4,6 @@ import HomeLayout from "../layouts/HomeLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Forgot from "../pages/Forgot";
-import Register from "../pages/Register";
 import Artical from "../pages/Artical";
 import SlugLayout from "../layouts/SlugLayout";
 import SlugPage from "../pages/SlugPage";
@@ -25,7 +24,7 @@ const AppRoutes = () => {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<Forgot />} />
-        <Route path="/register" element={<Register />} />
+  
 
         {/* --------------- Dashboard routes --------------- */}
         <Route path="/dashboard" element={<DashLayout />}>
