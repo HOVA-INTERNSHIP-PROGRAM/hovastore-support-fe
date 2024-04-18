@@ -3,7 +3,7 @@ import HovaLogo from "../assets/images/logo_hova.png";
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-import HSButton from "../components/UI/HSButton";
+import HSButton from "./UI/HSButton";
 
 function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
