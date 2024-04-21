@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Input from "../components/UI/HsInput";
-import Button from "../components/UI/HsButton";
+import HSInput from "../components/form/HSInput";
+import HSButton from "../components/form/HSButton";
 
 import { FaUser, FaLock } from "react-icons/fa";
 
@@ -14,17 +14,17 @@ function Login() {
           <div className="w-[95%] md:w-[85%] h-full flex flex-col justify-center items-center">
             <h2 className="text-2xl lx:text-4xl font-extrabold text-primary">HAVASTORE SUPPORT</h2>
             <div className="mt-6 mdl:mt-[34px] w-full">
-              <Input type="input" placeholder="Username" icon={<FaUser />} />
+              <HSInput type="input" placeholder="Username" icon={<FaUser />} />
             </div>
             <div className="mt-6 mdl:mt-[34px] w-full">
-              <Input
+              <HSInput
                 type="input"
                 placeholder="Password"
                 text="password"
                 icon={<FaLock />}
               />
             </div>
-            <Button
+            <HSButton
               title={`Login`}
               styles={`w-full !scale-100 mt-6 mdl:mt-12 bg-primary text-white`}
             />

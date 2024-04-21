@@ -1,4 +1,4 @@
-import Input from "./UI/HsInput";
+import HSInput from "./form/HSInput";
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { IoSettingsOutline, IoNotifications } from "react-icons/io5";
@@ -22,7 +22,7 @@ const TopNav = ({ title }) => {
 
       <h2 className=" text-base md:text-lg md:px-8 font-semibold">{title}</h2>
       <div className="flex p-1 items-center gap-3">
-        <Input type="input" style={`!rounded-full`} icon={<FaSearch />} />
+        <HSInput type="input" style={`!rounded-full`} icon={<FaSearch />} />
         <div className="flex items-center gap-3">
           {navBar.map((nav, index) => {
             return (
