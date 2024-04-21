@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectGetAllBooks, getAllBooks, getBooksStatus, getBooksError } from "../features/solutions/booksSlice";
 import Accordions from "../components/Accordions";
 import CardSolution from "../components/cardSolution/cardSolution";
-import CTA from "../components/CTA";
+import CTA from "../components/footer/UpperFooter";
 import NoData from "../components/NoData";
 import Skeleton from "../components/skeleton/solution.Skeleton";
 

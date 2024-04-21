@@ -4,7 +4,7 @@ import HomeLayout from "../layouts/HomeLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Forgot from "../pages/Forgot";
-import Artical from "../pages/Artical";
+import Artical from "../pages/Article";
 import SlugLayout from "../layouts/SlugLayout";
 import SlugPage from "../pages/SlugPage";
 import DashLayout from "../layouts/DashLayout";

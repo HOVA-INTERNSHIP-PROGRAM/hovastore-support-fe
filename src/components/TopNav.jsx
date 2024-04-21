@@ -1,4 +1,4 @@
-import HSInput from "./UI/HSInput";
+import HSInput from "./form/HSInput";
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { IoSettingsOutline, IoNotifications } from "react-icons/io5";

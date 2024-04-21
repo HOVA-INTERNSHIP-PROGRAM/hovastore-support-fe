@@ -1,8 +1,8 @@
 import React from "react";
 import StepImg from "../assets/images/loginImage.png";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
-import HSInput from "../components/UI/HSInput";
-import HSButton from "../components/UI/HSButton";
+import HSInput from "../components/form/HSInput";
+import HSButton from "../components/form/HSButton";
 
 function SlugPage() {
   return (

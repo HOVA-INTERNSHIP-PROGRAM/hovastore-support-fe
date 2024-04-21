@@ -3,7 +3,7 @@ import HovaLogo from "../assets/images/logo_hova.png";
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-import HSButton from "./UI/HSButton";
+import HSButton from "./form/HSButton";
 
 function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +56,7 @@ function HeroSection() {
       {/* Typography  */}
       <div className="flex flex-col items-center mt-10 lg:mt-20 mb-6 lg:mb-10">
         <h1 className="font-bold text-3xl lg:text-4xl mb-2 text-center">
-        Welcome to HovaStore Support
+          Welcome to HovaStore Support
         </h1>
         <p className="text-lg lg:text-3xl font-light text-center text-secondaryLight">
           Knowledge hub your ultimate resource for expert help and information
