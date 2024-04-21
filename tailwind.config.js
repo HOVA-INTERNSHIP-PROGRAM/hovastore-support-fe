@@ -8,6 +8,8 @@ module.exports = {
         secondary: "#F9FAFC",
         secondaryLight: "#F3F4F6",
         black: "#000000",
+        lightBlue:"#2E63EC",
+        purple:"#DE95C8"
       },
       fontFamily: {
         Lato: ["Lato"],
