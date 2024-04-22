@@ -2,7 +2,7 @@ import React from "react";
 
 function SubCardSolution({ subtitle, articals }) {
   return (
-    <div className="bg-white max-w-[410px] p-6 rounded-md">
+    <div className="bg-white w-full p-6 rounded-md">
       <h1 className="text-xl font-bold mb-4">{subtitle}</h1>
       <div className="bg-secondaryLight w-full h-[2px]"></div>
       <div className="mt-5">
