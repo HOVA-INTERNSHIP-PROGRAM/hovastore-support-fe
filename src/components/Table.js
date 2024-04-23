@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { RiEdit2Line, RiDeleteBinLine } from "react-icons/ri";
 import { FaSort, FaFilter } from "react-icons/fa";
 
+
 const Table = ({ data }) => {
   const [selectAll, setSelectAll] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
