@@ -41,8 +41,8 @@ const Table = ({ data }) => {
   };
 
   return (
-    <div>
-      <div className="flex flex-row gap-3">
+    <div className="bg-secondaryLight">
+      <div className="flex flex-row gap-3 justify-end pt-5 bg-secondaryLight mb-2">
         <div
           className="bg-white w-24 flex flex-row justify-center items-center rounded-md h-7 hover:cursor-pointer"
           onClick={handleSort}
@@ -57,7 +57,7 @@ const Table = ({ data }) => {
         </div>
       </div>
 
-      <div className="flex flex-col bg-white mt-4">
+      <div className="flex flex-col bg-white">
         <table className="min-w-full border border-black text-center text-sm font-light text-surface dark:border-white/10 dark:text-black">
           <thead className="border-b border-black font-medium dark:border-white/10 mb-4">
             <tr className="border-b border-grey h-16">
