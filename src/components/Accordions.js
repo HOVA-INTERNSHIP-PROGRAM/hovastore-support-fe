@@ -38,7 +38,7 @@ function Accordions() {
             className={`text-base ${activeQuestion === q?._id ? "font-bold" : ""
               }`}
           >
-            {q.questionPhrase}
+            {q?.question  || "How to Find yours"}
           </p>
           <div className="w-4 h-4 bg-secondaryLight rounded-2xl flex justify-center items-center">
             {activeQuestion === q?._id ? (

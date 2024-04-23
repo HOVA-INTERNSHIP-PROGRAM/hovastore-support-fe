@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectGetAllBooks, getAllBooks, getBooksStatus, getBooksError } from "../features/solutions/booksSlice";
+import { selectAllBooks, getAllBooks, getOnebook, selectBooksError, selectBooksLoading } from "../features/solutions/booksSlice";
 import Accordions from "../components/Accordions";
 import CardSolution from "../components/cardSolution/cardSolution";
 import CTA from "../components/footer/UpperFooter";
@@ -9,13 +9,17 @@ import Skeleton from "../components/skeleton/solution.Skeleton";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const books = useSelector(selectGetAllBooks);
-  const loading = useSelector(getBooksStatus);
-  const error = useSelector(getBooksError);
+  const books = useSelector(selectAllBooks);
+  const loading = useSelector(selectBooksLoading);
+  const error = useSelector(selectBooksError);
 
   useEffect(() => {
     dispatch(getAllBooks());
   }, [dispatch]);
+
+  const getArticle = (id) => {
+     dispatch(getOnebook(id));
+  }
 
   let content;
   if (error) {
@@ -29,6 +33,7 @@ const Home = () => {
         icon={book.icon}
         title={book.name}
         description={book.description}
+        click={()=>{getArticle(book?._id)}}
       />
     ));
   } else {
