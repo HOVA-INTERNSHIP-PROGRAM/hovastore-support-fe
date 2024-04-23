@@ -26,7 +26,6 @@ const AppRoutes = () => {
         <Route path="*" element={<ErrorPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<Forgot />} />
-    
 
         {/* --------------- Dashboard routes --------------- */}
         <Route path="/dashboard" element={<DashLayout />}>

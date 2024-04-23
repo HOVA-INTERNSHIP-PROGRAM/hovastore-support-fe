@@ -1,14 +1,20 @@
-import React from "react";
-import HeroSection from "../components/HeroSection";
-import Footer from "../components/Footer";
+import React, { useState } from "react";
+import HovaLogo from "../assets/images/logo_hova.png";
+import { Link } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import MainFooter from "../components/footer/MainFooter";
+import HSButton from "../components/form/HSButton";
 
-function ErrorPage() {
+function ErrorPage({ statusCode, errorMessage, errorTitle }) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <>
-      <div className="lg:py-20 lg:px-28 py-10 px-6 bg-primary text-white">
+    <div className="h-screen flex flex-col">
+      <div className="lg:px-28 py-7 px-6 bg-primary text-white">
         <nav className="flex items-center justify-between">
           <div className="cursor-pointer">
-            <img src={HovaLogo} alt="Hova_ai_Logo" className="w-20" />
+            <Link to="/">
+              <img src={HovaLogo} alt="Hova_ai_Logo" className="w-20" />
+            </Link>
           </div>
           <div className="flex items-center gap-6">
             <div className="font-semibold hidden lg:block">
@@ -51,9 +57,30 @@ function ErrorPage() {
           </div>
         </nav>
       </div>
-      <div>ErrorPage</div>
-      <Footer />
-    </>
+      <div className="bg-secondaryLight flex justify-center  flex-1 overflow-hidden relative px-6">
+        <div className="flex flex-col items-center gap-6 z-10">
+          <h1 className="font-bold text-[100px]">
+            {statusCode ? statusCode : "404"}
+          </h1>
+          <p className="font-bold text-4xl text-primary text-center">
+            {errorTitle ? errorTitle : "Oops! page not found"}
+          </p>
+          <p className="font-semibold text-xl text-center">
+            {errorMessage
+              ? errorMessage
+              : "This page doesn’t exist or was removed ! we suggest you go back Home"}
+          </p>
+          <HSButton
+            title="Back To Home"
+            styles="bg-primary text-white w-48"
+            path="/"
+          />
+        </div>
+        {/* Overflow circle */}
+        <div className="w-[700px] h-[700px] bg-[#DE95C8]/20 rounded-full absolute bottom-[-400px] z--10"></div>
+      </div>
+      <MainFooter />
+    </div>
   );
 }
 
