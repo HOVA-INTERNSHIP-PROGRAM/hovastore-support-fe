@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import { useSelector, useDispatch } from "react-redux";
-import { selectGetAllquestions, getAllquestions, getquestionsError, getquestionsStatus } from "../features/question/questionSlice";
+import {
+  selectGetAllquestions,
+  getAllquestions,
+  getquestionsError,
+  getquestionsStatus,
+} from "../features/question/questionSlice";
 import Skeleton from "./skeleton/question.Skeleton";
 import NoData from "./NoData";
 
@@ -12,31 +17,30 @@ function Accordions() {
   const loading = useSelector(getquestionsStatus);
   const error = useSelector(getquestionsError);
 
-
   useEffect(() => {
     dispatch(getAllquestions());
-  }, [dispatch])
+  }, [dispatch]);
 
   let content;
   if (error) {
     content = <p className="text-base text-red-700">Error: {error}</p>;
-  }
-  else if (loading) {
+  } else if (loading) {
     content = Array.from({ length: 6 }, (_, index) => <Skeleton key={index} />);
   } else if (questions.length > 0) {
     content = questions.map((q) => (
-      <div key={q?._id} className=" groupbg-secondaryLight"  >
-
+      <div key={q?._id} className=" groupbg-secondaryLight">
         <div
-          className={`cursor-pointer mx-auto !w-full p-4 text-black text-left text-xl focus:outline-none  hover:scale-105 transition ease-out duration-200 hover:shadow-xl  bg-secondary ${activeQuestion === q?._id ? "rounded-t-lg" : "rounded-lg"
-            } shadow-md flex justify-between items-center`}
+          className={`cursor-pointer mx-auto !w-full p-4 text-black text-left text-xl focus:outline-none  hover:scale-105 transition ease-out duration-200 hover:shadow-xl  bg-secondary ${
+            activeQuestion === q?._id ? "rounded-t-lg" : "rounded-lg"
+          } shadow-md flex justify-between items-center`}
           onClick={() => {
             setActiveQuestions(activeQuestion === q?._id ? null : q?._id);
           }}
         >
           <p
-            className={`text-base ${activeQuestion === q?._id ? "font-bold" : ""
-              }`}
+            className={`text-base ${
+              activeQuestion === q?._id ? "font-bold" : ""
+            }`}
           >
             {q?.question  || "How to Find yours"}
           </p>
@@ -50,23 +54,23 @@ function Accordions() {
         </div>
 
         {activeQuestion === q?._id && (
-          <div
-            className=" text-gray-600 "
-          >
-
+          <div className=" text-gray-600 ">
             <div className="cursor-pointer mx-auto !w-full p-4 text-black text-left text-xl focus:outline-none  hover:scale-105 transition ease-out duration-200 hover:shadow-xl  bg-secondary">
               <p className="pl-4 text-sm w-full leading-[14px] pt-4 pb-2">
-                {q?.answers.map((answer) => <div className="flex flex-col gap-1 "> <p>{answer?.step}</p> <p>{answer?.stepDescription} </p> </div>)}
+                {q?.answers.map((answer) => (
+                  <div className="flex flex-col gap-1 ">
+                    {" "}
+                    <p>{answer?.step}</p> <p>{answer?.stepDescription} </p>{" "}
+                  </div>
+                ))}
               </p>
             </div>
           </div>
         )}
-
       </div>
-    ))
-  }
-  else {
-    content = <NoData />
+    ));
+  } else {
+    content = <NoData />;
   }
 
   return (
@@ -75,7 +79,6 @@ function Accordions() {
         Frequently Asked Questions
       </h2>
       <div className="flex flex-col gap-1 w-[340px] sm:w-[500px] mx-auto p-4">
-
         {content}
       </div>
     </div>

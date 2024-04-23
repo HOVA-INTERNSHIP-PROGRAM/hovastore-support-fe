@@ -1,5 +1,6 @@
 export const data = [
   {
+    id: 1,
     icon: "Icon",
     title: "Customers",
     desc: "add Customers in your system",
@@ -20,6 +21,7 @@ export const data = [
         ],
       },
       {
+        id: 2,
         subTitle: "Customers Progress & Monitaring",
         articals: [
           {
@@ -42,6 +44,7 @@ export const data = [
     ],
   },
   {
+    id: 3,
     icon: "Icon",
     title: "Payment",
     desc: "add payment in your system",
