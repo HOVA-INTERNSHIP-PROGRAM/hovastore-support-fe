@@ -6,7 +6,8 @@ const DeleteModal = ({ isOpen, onClose, data, dbdata }) => {
         const idToDelete = data.id;
     
         // Filter out the item with the specified ID from 'dbdata'
-        const updatedDbData = dbdata.filter(item => item.id !== idToDelete); // watch here
+        const updatedDbData = dbdata.filter(item => item.id !== idToDelete);
+        console.log(updatedDbData);
         onClose();
       };
 
