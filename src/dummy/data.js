@@ -3,7 +3,7 @@ export const data = [
     id: 1,
     icon: "Icon 1",
     title: "Customers",
-    desc: "Manage customer information and interactions.",
+    desc: "Manage customer information and interactions. Manage customer information and interactions.Manage customer information and interactions.Manage customer information and interactions.Manage customer information and interactions.Manage customer information and interactions.",
     subcategories: [
       {
         subTitle: "Customer Management",
@@ -26,8 +26,7 @@ export const data = [
         articals: [
           {
             articalTitle: "How to provide excellent support",
-            content:
-              "Tips and tricks for offering top-notch customer support.",
+            content: "Tips and tricks for offering top-notch customer support.",
           },
           {
             articalTitle: "Handling customer complaints",
@@ -49,13 +48,11 @@ export const data = [
         articals: [
           {
             articalTitle: "How to process payments",
-            content:
-              "Learn how to process payments securely and efficiently.",
+            content: "Learn how to process payments securely and efficiently.",
           },
           {
             articalTitle: "Setting up payment gateways",
-            content:
-              "Guide on integrating and configuring payment gateways.",
+            content: "Guide on integrating and configuring payment gateways.",
           },
         ],
       },
@@ -92,8 +89,7 @@ export const data = [
           },
           {
             articalTitle: "Adding new products",
-            content:
-              "Guide on adding new products to your inventory.",
+            content: "Guide on adding new products to your inventory.",
           },
         ],
       },
@@ -1140,5 +1136,4 @@ export const data = [
       },
     ],
   },
-  
 ];

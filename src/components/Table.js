@@ -87,7 +87,7 @@ const Table = ({ data }) => {
         </div>
       </div>
 
-      <div className="flex flex-col bg-white">
+      <div className="flex flex-col bg-white overflow-x-auto">
         <table className="min-w-full border border-black text-center text-sm font-light text-surface dark:border-white/10 dark:text-black">
           <thead className="border-b border-black font-medium dark:border-white/10 mb-4">
             <tr className="border-b border-grey h-16">
