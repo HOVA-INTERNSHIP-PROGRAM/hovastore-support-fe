@@ -1,12 +1,12 @@
 import React from "react";
 
-const FilterModal = ({ isOpen, onClose, data, dbdata }) => {
+const DeleteModal = ({ isOpen, onClose, data, dbdata }) => {
     const handleDelete = () => {
         // Assuming 'singledata' contains the ID of the item to delete
         const idToDelete = data.id;
     
         // Filter out the item with the specified ID from 'dbdata'
-        const updatedDbData = dbdata.filter(item => item.id !== idToDelete);
+        const updatedDbData = dbdata.filter(item => item.id !== idToDelete); // watch here
         onClose();
       };
 
@@ -39,4 +39,4 @@ const FilterModal = ({ isOpen, onClose, data, dbdata }) => {
   );
 };
 
-export default FilterModal;
+export default DeleteModal;
