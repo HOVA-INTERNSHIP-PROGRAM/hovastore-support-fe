@@ -161,43 +161,45 @@ const Table = ({ data }) => {
         </table>
       </div>
       {/* Pagination */}
-      <div className="flex justify-end items-center mt-2">
-        <nav aria-label="Page navigation example">
-          <ul className="flex items-center -space-x-px h-10 text-base">
-            <li>
-              <button
-                onClick={() => paginate(currentPage - 1)}
-                disabled={currentPage === 1}
-              >
-                Previous
-              </button>
-            </li>
-            {Array.from(
-              { length: Math.ceil(filteredData.length / itemsPerPage) },
-              (_, i) => (
-                <li key={i}>
-                  <button
-                    onClick={() => paginate(i + 1)}
-                    className={currentPage === i + 1 ? "active" : ""}
-                  >
-                    {i + 1}
-                  </button>
-                </li>
-              )
-            )}
-            <li>
-              <button
-                onClick={() => paginate(currentPage + 1)}
-                disabled={
-                  currentPage === Math.ceil(filteredData.length / itemsPerPage)
-                }
-              >
-                Next
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      {/* Pagination */}
+<div className="flex justify-end items-center mt-2">
+  <nav aria-label="Page navigation example">
+    <ul className="flex items-center -space-x-px h-10 text-base">
+      <li>
+        <button
+          onClick={() => paginate(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+      </li>
+      {currentPage > 1 && (
+        <li>
+          <button onClick={() => paginate(currentPage - 1)}>{currentPage - 1}</button>
+        </li>
+      )}
+      <li>
+        <button className="active">{currentPage}</button>
+      </li>
+      {currentPage < Math.ceil(filteredData.length / itemsPerPage) && (
+        <li>
+          <button onClick={() => paginate(currentPage + 1)}>{currentPage + 1}</button>
+        </li>
+      )}
+      <li>
+        <button
+          onClick={() => paginate(currentPage + 1)}
+          disabled={
+            currentPage === Math.ceil(filteredData.length / itemsPerPage)
+          }
+        >
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+
 
       <FilterModal
         isOpen={isFilterModalOpen}
