@@ -43,25 +43,10 @@ const NewCategoryModal = ({ isOpen, onClose }) => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
-              htmlFor="icon"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Icon:
-            </label>
-            <input
-              type="file"
-              id="icon"
-              accept="image/*"
-              onChange={handleIconChange}
-              className="border rounded-md px-3 py-2 w-full"
-            />
-          </div>
-          <div className="mb-4">
-            <label
               htmlFor="name"
               className="block text-sm font-medium text-gray-700"
             >
-              Name:
+              Name <span className="text-2xl text-red-400">&#x002A;</span>
             </label>
             <input
               type="text"
@@ -73,10 +58,25 @@ const NewCategoryModal = ({ isOpen, onClose }) => {
           </div>
           <div className="mb-4">
             <label
+              htmlFor="icon"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Icon <span className="text-2xl text-red-400">&#x002A;</span>
+            </label>
+            <input
+              type="file"
+              id="icon"
+              accept="image/*"
+              onChange={handleIconChange}
+              className="border rounded-md px-3 py-2 w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
               htmlFor="description"
               className="block text-sm font-medium text-gray-700"
             >
-              Description:
+              Description <span className="text-2xl text-red-400">&#x002A;</span>
             </label>
             <textarea
               id="description"
