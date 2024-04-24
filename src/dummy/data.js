@@ -228,5 +228,917 @@ export const data = [
       },
     ],
   },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    icon: "Icon 6",
+    title: "Analytics",
+    desc: "Gain insights from data and analytics.",
+    subcategories: [
+      {
+        subTitle: "Data Visualization",
+        articals: [
+          {
+            articalTitle: "Creating effective data visualizations",
+            content:
+              "Tips for creating clear and insightful data visualizations for better analysis.",
+          },
+          {
+            articalTitle: "Interpreting data trends",
+            content:
+              "Guide on interpreting and understanding data trends and patterns.",
+          },
+        ],
+      },
+      {
+        subTitle: "Predictive Analytics",
+        articals: [
+          {
+            articalTitle: "Utilizing predictive analytics",
+            content:
+              "Methods and tools for using predictive analytics to forecast trends and outcomes.",
+          },
+          {
+            articalTitle: "Applying machine learning models",
+            content:
+              "Guide on applying machine learning models for predictive analysis.",
+          },
+        ],
+      },
+    ],
+  },
   
 ];
