@@ -14,7 +14,7 @@ const DashLayout = () => {
       </div>
 
       <div
-        className="overflow-hidden mt-20 px-8 bg-red-500 flex flex-col justify-between absolute right-0 "
+        className="overflow-hidden mt-20 px-8 flex flex-col justify-between absolute right-0"
         style={{ width: `calc(100% - ${open ? "180px" : "80px"})` }}
       >
         <Outlet />
