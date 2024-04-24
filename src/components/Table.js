@@ -255,6 +255,7 @@ const Table = ({ data }) => {
         isOpen={isDeleteModalOpen}
         onClose={handleCloseDeleteModal}
         data={newSingleData}
+        dbdata={data}
       />
     </div>
   );

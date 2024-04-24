@@ -1,6 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
-const FilterModal = ({ isOpen, onClose, data }) => {
+const FilterModal = ({ isOpen, onClose, data, dbdata }) => {
+    const handleDelete = () => {
+        // Assuming 'singledata' contains the ID of the item to delete
+        const idToDelete = data.id;
+    
+        // Filter out the item with the specified ID from 'dbdata'
+        const updatedDbData = dbdata.filter(item => item.id !== idToDelete);
+        onClose();
+      };
 
   return (
     <div
@@ -15,7 +23,7 @@ const FilterModal = ({ isOpen, onClose, data }) => {
         <div className="flex justify-end mt-5 gap-5">
           <button
             className="bg-blue-500 text-black px-4 py-2 rounded-md"
-            // onClick={handleApplyFilters}
+            onClick={handleDelete}
           >
             Yes
           </button>
