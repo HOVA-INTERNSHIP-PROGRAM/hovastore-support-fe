@@ -162,44 +162,56 @@ const Table = ({ data }) => {
       </div>
       {/* Pagination */}
       {/* Pagination */}
-<div className="flex justify-end items-center mt-2">
-  <nav aria-label="Page navigation example">
-    <ul className="flex items-center -space-x-px h-10 text-base">
-      <li>
-        <button
-          onClick={() => paginate(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-      </li>
-      {currentPage > 1 && (
-        <li>
-          <button onClick={() => paginate(currentPage - 1)}>{currentPage - 1}</button>
-        </li>
-      )}
-      <li>
-        <button className="active">{currentPage}</button>
-      </li>
-      {currentPage < Math.ceil(filteredData.length / itemsPerPage) && (
-        <li>
-          <button onClick={() => paginate(currentPage + 1)}>{currentPage + 1}</button>
-        </li>
-      )}
-      <li>
-        <button
-          onClick={() => paginate(currentPage + 1)}
-          disabled={
-            currentPage === Math.ceil(filteredData.length / itemsPerPage)
-          }
-        >
-          Next
-        </button>
-      </li>
-    </ul>
-  </nav>
-</div>
-
+      <div className="flex justify-end items-center mt-2 text-blue-600">
+        <nav aria-label="Page navigation example">
+          <ul className="flex items-center gap-3 -space-x-px h-10 text-base">
+            <li>
+              <button
+                onClick={() => paginate(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                {"< Previous"}
+              </button>
+            </li>
+            {currentPage > 1 && (
+              <li>
+                <button onClick={() => paginate(currentPage - 1)}>
+                  {currentPage - 1}
+                </button>
+              </li>
+            )}
+            <li>
+              <button
+                style={{
+                  backgroundColor:
+                    currentPage === currentPage ? "#3b82f6" : "transparent",
+                  color: currentPage === currentPage ? "#fff" : "#000",
+                }}
+                className="w-5 h-6 rounded-md"
+              >
+                {currentPage}
+              </button>
+            </li>
+            {currentPage < Math.ceil(filteredData.length / itemsPerPage) && (
+              <li>
+                <button onClick={() => paginate(currentPage + 1)}>
+                  {currentPage + 1}
+                </button>
+              </li>
+            )}
+            <li>
+              <button
+                onClick={() => paginate(currentPage + 1)}
+                disabled={
+                  currentPage === Math.ceil(filteredData.length / itemsPerPage)
+                }
+              >
+                {"Next >"}
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <FilterModal
         isOpen={isFilterModalOpen}
