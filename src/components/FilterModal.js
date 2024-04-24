@@ -33,11 +33,13 @@ const FilterModal = ({ isOpen, onClose, applyFilters, data }) => {
               onChange={(e) => setSelectedName(e.target.value)}
             >
               <option value="">Select Name</option>
-              {data.map((item) => (
-                <option key={item.id} value={item.title}>
-                  {item.title}
-                </option>
-              ))}
+              {[...new Set(data.map((item) => item.title))].map(
+                (title, index) => (
+                  <option key={index} value={title}>
+                    {title}
+                  </option>
+                )
+              )}
             </select>
           )}
         </div>
