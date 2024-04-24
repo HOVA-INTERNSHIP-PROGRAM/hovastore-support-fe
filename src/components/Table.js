@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { RiEdit2Line, RiDeleteBinLine } from "react-icons/ri";
 import { FaSort, FaFilter } from "react-icons/fa";
+import FilterModal from './FilterModal';
 
 
 const Table = ({ data }) => {
   const [selectAll, setSelectAll] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+  const [nameFilter, setNameFilter] = useState("");
+
 
   const handleSelectAll = (event) => {
     const isChecked = event.target.checked;
@@ -41,6 +45,25 @@ const Table = ({ data }) => {
     });
   };
 
+  const handleCloseFilterModal = () => {
+    setIsFilterModalOpen(false);
+  };
+
+  const handleOpenFilterModal = () => {
+    setIsFilterModalOpen(true);
+  };
+
+  const applyFilters = (filters) => {
+    setNameFilter(filters.name);
+    handleCloseFilterModal();
+  };
+
+  const filteredData = data.filter((item) =>
+  item.title.toLowerCase().includes(nameFilter.toLowerCase())
+);
+
+
+
   return (
     <div className="bg-secondaryLight">
       <div className="flex flex-row gap-3 justify-end pt-5 bg-secondaryLight mb-2">
@@ -52,7 +75,7 @@ const Table = ({ data }) => {
         </div>
         <div
           className="bg-white w-24 flex flex-row justify-center items-center rounded-md h-7 hover:cursor-pointer"
-          // onClick={handleOpenFilterModal}
+          onClick={handleOpenFilterModal}
         >
           <FaFilter className="w-7 h-4" /> Filter
         </div>
@@ -97,7 +120,7 @@ const Table = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item, index) => (
+            {filteredData.map((item, index) => (
               <tr key={index} className="border-b border-grey h-4">
                 <td className="whitespace-nowrap border-e border-black px-6 py-4 font-medium dark:border-white/10">
                   <input
@@ -131,6 +154,12 @@ const Table = ({ data }) => {
           </tbody>
         </table>
       </div>
+      <FilterModal
+        isOpen={isFilterModalOpen}
+        onClose={handleCloseFilterModal}
+        applyFilters={applyFilters}
+        data={data}
+      />
     </div>
   );
 };
