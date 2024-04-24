@@ -9,6 +9,7 @@ import SlugLayout from "../layouts/SlugLayout";
 import SlugPage from "../pages/SlugPage";
 import DashLayout from "../layouts/DashLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
+import Settings from "../pages/dashboard/Settings";
 import ErrorPage from "../pages/ErrorPage";
 
 const AppRoutes = () => {
@@ -30,6 +31,7 @@ const AppRoutes = () => {
         {/* --------------- Dashboard routes --------------- */}
         <Route path="/dashboard" element={<DashLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="/dashboard/settings" element={<Settings />} />
         </Route>
       </Routes>
     </Router>
