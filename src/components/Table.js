@@ -3,6 +3,7 @@ import { RiEdit2Line, RiDeleteBinLine } from "react-icons/ri";
 import { FaSort, FaFilter } from "react-icons/fa";
 import FilterModal from "./FilterModal";
 import EditModal from "./EditModal";
+import DeleteModal from './DeleteModal';
 
 const Table = ({ data }) => {
   const [selectAll, setSelectAll] = useState(false);
@@ -10,6 +11,7 @@ const Table = ({ data }) => {
   const [sortOrder, setSortOrder] = useState("asc");
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [nameFilter, setNameFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(6);
@@ -56,6 +58,10 @@ const Table = ({ data }) => {
     setIsEditModalOpen(false);
   };
 
+  const handleCloseDeleteModal = () => {
+    setIsDeleteModalOpen(false);
+  };
+
   const handleOpenFilterModal = () => {
     setIsFilterModalOpen(true);
   };
@@ -64,6 +70,12 @@ const Table = ({ data }) => {
     const singleData = data.find((dataItem) => dataItem.id === item.id);
     setNewSingleData(singleData);
     setIsEditModalOpen(true);
+  };
+
+  const handleOpenDeleteModal = (item) => {
+    const singleData = data.find((dataItem) => dataItem.id === item.id);
+    setNewSingleData(singleData);
+    setIsDeleteModalOpen(true);
   };
 
   const applyFilters = (filters) => {
@@ -167,8 +179,8 @@ const Table = ({ data }) => {
                   >
                     <RiEdit2Line className="text-blue-500 size-6" />
                   </button>
-                  <button className="font-bold py-2 px-4 rounded">
-                    <RiDeleteBinLine className="text-red-500 size-6" />
+                  <button className="font-bold py-2 px-4 rounded" onClick={() => handleOpenDeleteModal(item)}>
+                    <RiDeleteBinLine className="text-pink-400 size-6" />
                   </button>
                 </td>
               </tr>
@@ -237,6 +249,11 @@ const Table = ({ data }) => {
       <EditModal
         isOpen={isEditModalOpen}
         onClose={handleCloseEditModal}
+        data={newSingleData}
+      />
+      <DeleteModal
+        isOpen={isDeleteModalOpen}
+        onClose={handleCloseDeleteModal}
         data={newSingleData}
       />
     </div>

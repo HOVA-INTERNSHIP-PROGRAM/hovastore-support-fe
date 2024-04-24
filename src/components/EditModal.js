@@ -105,7 +105,7 @@ const FilterModal = ({ isOpen, onClose, data }) => {
               type="submit"
               className="bg-green-500 text-white px-4 py-2 rounded-md"
             >
-              Create
+              Update
             </button>
           </div>
         </form>
