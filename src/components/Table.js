@@ -183,9 +183,8 @@ const Table = ({ data }) => {
             <li>
               <button
                 style={{
-                  backgroundColor:
-                    currentPage === currentPage ? "#3b82f6" : "transparent",
-                  color: currentPage === currentPage ? "#fff" : "#000",
+                  backgroundColor: currentPage ? "#3b82f6" : "transparent",
+                  color: currentPage ? "#fff" : "#000",
                 }}
                 className="w-5 h-6 rounded-md"
               >
