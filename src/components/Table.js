@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { RiEdit2Line, RiDeleteBinLine } from "react-icons/ri";
 import { FaSort, FaFilter } from "react-icons/fa";
 import FilterModal from "./FilterModal";
+import EditModal from './EditModal';
 
 const Table = ({ data }) => {
   const [selectAll, setSelectAll] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [nameFilter, setNameFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(6);
@@ -48,9 +50,17 @@ const Table = ({ data }) => {
   const handleCloseFilterModal = () => {
     setIsFilterModalOpen(false);
   };
+  
+  const handleCloseEditModal = () => {
+    setIsEditModalOpen(false);
+  };
 
   const handleOpenFilterModal = () => {
     setIsFilterModalOpen(true);
+  };
+
+  const handleOpenEditModal = () => {
+    setIsEditModalOpen(true);
   };
 
   const applyFilters = (filters) => {
@@ -148,7 +158,7 @@ const Table = ({ data }) => {
                   {item.desc}
                 </td>
                 <td className="text-black whitespace-nowrap px-6 py-4 flex justify-end">
-                  <button className="font-bold py-2 px-4 rounded">
+                  <button className="font-bold py-2 px-4 rounded" onClick={handleOpenEditModal}>
                     <RiEdit2Line className="text-blue-500 size-6" />
                   </button>
                   <button className="font-bold py-2 px-4 rounded">
@@ -216,6 +226,11 @@ const Table = ({ data }) => {
         isOpen={isFilterModalOpen}
         onClose={handleCloseFilterModal}
         applyFilters={applyFilters}
+        data={data}
+      />
+      <EditModal
+        isOpen={isEditModalOpen}
+        onClose={handleCloseEditModal}
         data={data}
       />
     </div>
