@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const FilterModal = ({ isOpen, onClose, data }) => {
   const [iconFile, setIconFile] = useState(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    // Populate the input fields with data when 'data' changes
+    if (data) {
+      setName(data.title);
+      setDescription(data.desc);
+    }
+  }, [data]); // Run this effect whenever 'data' changes
 
   const handleIconChange = (e) => {
     const file = e.target.files[0];

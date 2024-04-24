@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RiEdit2Line, RiDeleteBinLine } from "react-icons/ri";
 import { FaSort, FaFilter } from "react-icons/fa";
 import FilterModal from "./FilterModal";
-import EditModal from './EditModal';
+import EditModal from "./EditModal";
 
 const Table = ({ data }) => {
   const [selectAll, setSelectAll] = useState(false);
@@ -14,6 +14,7 @@ const Table = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(6);
 
+  const [newSingleData, setNewSingleData] = useState(null);
   const handleSelectAll = (event) => {
     const isChecked = event.target.checked;
     setSelectAll(isChecked);
@@ -50,7 +51,7 @@ const Table = ({ data }) => {
   const handleCloseFilterModal = () => {
     setIsFilterModalOpen(false);
   };
-  
+
   const handleCloseEditModal = () => {
     setIsEditModalOpen(false);
   };
@@ -59,7 +60,9 @@ const Table = ({ data }) => {
     setIsFilterModalOpen(true);
   };
 
-  const handleOpenEditModal = () => {
+  const handleOpenEditModal = (item) => {
+    const singleData = data.find((dataItem) => dataItem.id === item.id);
+    setNewSingleData(singleData);
     setIsEditModalOpen(true);
   };
 
@@ -158,7 +161,10 @@ const Table = ({ data }) => {
                   {item.desc}
                 </td>
                 <td className="text-black whitespace-nowrap px-6 py-4 flex justify-end">
-                  <button className="font-bold py-2 px-4 rounded" onClick={handleOpenEditModal}>
+                  <button
+                    className="font-bold py-2 px-4 rounded"
+                    onClick={() => handleOpenEditModal(item)}
+                  >
                     <RiEdit2Line className="text-blue-500 size-6" />
                   </button>
                   <button className="font-bold py-2 px-4 rounded">
@@ -231,7 +237,7 @@ const Table = ({ data }) => {
       <EditModal
         isOpen={isEditModalOpen}
         onClose={handleCloseEditModal}
-        data={data}
+        data={newSingleData}
       />
     </div>
   );
