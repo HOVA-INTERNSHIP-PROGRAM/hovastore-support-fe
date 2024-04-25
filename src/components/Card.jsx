@@ -3,7 +3,7 @@ import React from 'react'
 function Card({ title, count, icon, iconBackground,style }) {
   return (
     <div>
-      <div className={`${style}bg-white text-primary rounded-lg p-3 flex items-center justify-between shadow mt-3`}>
+      <div className={`${style} bg-white text-primary rounded-lg p-3 flex items-center justify-between shadow mt-3`}>
       <div className=''>
       <h2 className="text-2xl font-bold mb-1">{count}</h2>
       <span className="text-base text-darkGray">{title}</span>
