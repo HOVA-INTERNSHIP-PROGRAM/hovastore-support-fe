@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import Profile from "../../assets/images/loginImage.png";
+import { MdEdit } from "react-icons/md";
+import HSInput from "../../components/form/HSInput";
+import HSButton from "../../components/form/HSButton";
 
 function Settings() {
   const [toggleState, setToggleState] = useState(1);
@@ -9,9 +11,10 @@ function Settings() {
   };
 
   return (
-    <div className="bg-white p-8 h-[400px] rounded-sm">
-      {/* Tab Container */}
+    <div className="bg-white px-8 py-10 rounded-sm">
+      {/*----------------- Tabs Container -------------- */}
       <div className="flex gap-10 items-center font-medium border-b-[1px] border-[#F4F5F7]">
+        {/* ---------------- First Tab ---------------- */}
         <div
           className="cursor-pointer flex flex-col gap-2"
           onClick={() => toggleTab(1)}
@@ -25,6 +28,7 @@ function Settings() {
             }
           ></div>
         </div>
+        {/* ---------------- Second Tab ---------------- */}
         <div
           className="cursor-pointer flex flex-col gap-2"
           onClick={() => toggleTab(2)}
@@ -39,26 +43,65 @@ function Settings() {
           ></div>
         </div>
       </div>
-      {/* Tab content container */}
+      {/* --------------- Tabs content container -------------*/}
       <div>
-        {/* Edit Profile container */}
+        {/*----------------- Edit Profile container --------------*/}
         <div className={toggleState === 1 ? "flex gap-10 mt-8" : "hidden"}>
-          <div className="w-[100px] h-[100px] rounded-full  relative">
+          <div className="w-[100px] h-[100px] rounded-full  relative shrink-0">
             <img
-              src={Profile}
+              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="profile-image"
               className="w-full h-full object-cover rounded-full"
             />
-            <div className="absolute w-6 h-6 rounded-full bg-[#2E63EC] bottom-5 right-4 z-10">
-              ed
+            <div className="absolute w-7 h-7 rounded-full bg-[#2E63EC] bottom-2 right-[-8px] z-10 flex items-center justify-center">
+              <MdEdit className="text-white size-5 cursor-pointer" />
             </div>
           </div>
-          <div>Form</div>
+          <div className="w-full">
+            <form className="flex flex-col gap-6">
+              <div className="flex items-center gap-6 ">
+                <HSInput
+                  type="input"
+                  label="Your Name"
+                  placeholder="John Doe"
+                />
+                <HSInput type="input" label="User Name" placeholder="Admin" />
+              </div>
+              <div className="flex items-center gap-6">
+                <HSInput
+                  type="input"
+                  label="Email"
+                  placeholder="johnDoe@gmail.com"
+                />
+                <HSInput type="input" label="Password" placeholder="********" />
+              </div>
+              <div className="flex justify-end">
+                <HSButton title="Save" styles="w-40" />
+              </div>
+            </form>
+          </div>
         </div>
-
-        {/* Security container */}
+        {/*----------------- Security container -----------------*/}
         <div className={toggleState === 2 ? "flex mt-8" : "hidden"}>
-          <div>security</div>
+          <div className="w-full">
+            <form className="flex flex-col gap-6">
+              <HSInput
+                type="input"
+                label="Current Password"
+                placeholder="********"
+                style="w-[400px]"
+              />
+              <HSInput
+                type="input"
+                label="New Password"
+                placeholder="********"
+                style="w-[400px]"
+              />
+              <div className="flex justify-end">
+                <HSButton title="Save" styles="w-40" />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
