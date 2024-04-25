@@ -54,7 +54,7 @@ const FilterModal = ({ isOpen, onClose, data }) => {
               htmlFor="icon"
               className="block text-sm font-medium text-gray-700"
             >
-              Icon:
+              Icon <span className="text-2xl text-red-400">&#x002A;</span>
             </label>
             <input
               type="file"
@@ -69,7 +69,7 @@ const FilterModal = ({ isOpen, onClose, data }) => {
               htmlFor="name"
               className="block text-sm font-medium text-gray-700"
             >
-              Name:
+              Name <span className="text-2xl text-red-400">&#x002A;</span>
             </label>
             <input
               type="text"
@@ -84,7 +84,7 @@ const FilterModal = ({ isOpen, onClose, data }) => {
               htmlFor="description"
               className="block text-sm font-medium text-gray-700"
             >
-              Description:
+              Description <span className="text-2xl text-red-400">&#x002A;</span>
             </label>
             <textarea
               id="description"
