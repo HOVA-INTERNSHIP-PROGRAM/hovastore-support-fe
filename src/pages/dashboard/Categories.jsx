@@ -8,6 +8,13 @@ function Categories() {
   const handleNewCategoryModal = () => {
     setIsNewCategoryModalOpen(true); // Corrected function call
   };
+  // Define the table headers
+  const tableHeaders = [
+    { label: "Icon", className: "border-e border-black h-full dark:border-white/10 w-16 font-semibold text-blue-600" },
+    { label: "Name", className: "border-e border-black h-full dark:border-white/10 font-semibold text-blue-600" },
+    { label: "Description", className: "h-full font-semibold text-blue-600" },
+    { label: "Action", className: "font-semibold text-blue-600 h-16 flex justify-end items-center pr-14" }
+  ];
   return (
     <div className="flex flex-col bg-secondaryLight mt-4">
       <button
@@ -17,7 +24,7 @@ function Categories() {
         New category
       </button>
 
-      <Table data={data} />
+      <Table data={data} headers={tableHeaders} />
       <NewCategoryModal
         isOpen={isNewCategoryModalOpen} // Corrected prop name
         onClose={() => setIsNewCategoryModalOpen(false)} // Close function

@@ -3,9 +3,9 @@ import { RiEdit2Line, RiDeleteBinLine } from "react-icons/ri";
 import { FaSort, FaFilter } from "react-icons/fa";
 import FilterModal from "./FilterModal";
 import EditModal from "./EditModal";
-import DeleteModal from './DeleteModal';
+import DeleteModal from "./DeleteModal";
 
-const Table = ({ data }) => {
+const Table = ({ data, headers }) => {
   const [selectAll, setSelectAll] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
@@ -127,27 +127,11 @@ const Table = ({ data }) => {
                   onChange={handleSelectAll}
                 />
               </th>
-              <th
-                scope="col"
-                className="border-e border-black h-full dark:border-white/10 w-16 font-semibold text-blue-600"
-              >
-                Icon
-              </th>
-              <th
-                scope="col"
-                className="border-e border-black h-full dark:border-white/10 font-semibold text-blue-600"
-              >
-                Name
-              </th>
-              <th scope="col" className="h-full font-semibold text-blue-600">
-                Description
-              </th>
-              <th
-                scope="col"
-                className="font-semibold text-blue-600 h-16 flex justify-end items-center pr-14"
-              >
-                Action
-              </th>
+              {headers.map((header, index) => (
+                <th key={index} scope="col" className={header.className}>
+                  {header.label}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -179,7 +163,10 @@ const Table = ({ data }) => {
                   >
                     <RiEdit2Line className="text-blue-500 size-6" />
                   </button>
-                  <button className="font-bold py-2 px-4 rounded" onClick={() => handleOpenDeleteModal(item)}>
+                  <button
+                    className="font-bold py-2 px-4 rounded"
+                    onClick={() => handleOpenDeleteModal(item)}
+                  >
                     <RiDeleteBinLine className="text-pink-400 size-6" />
                   </button>
                 </td>
