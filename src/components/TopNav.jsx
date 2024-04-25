@@ -9,7 +9,7 @@ const TopNav = ({ title }) => {
   const open = useSelector(getSidebarStatus);
   const navBar = [
     {
-      path: "/Settings",
+      path: "/dashboard/settings",
       icon: <IoSettingsOutline />,
     },
     {

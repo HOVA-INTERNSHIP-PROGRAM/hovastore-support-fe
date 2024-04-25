@@ -11,7 +11,7 @@ function Settings() {
   };
 
   return (
-    <div className="bg-white px-8 py-10 rounded-sm">
+    <div className="bg-white px-5 md:px-8 py-10 rounded-sm">
       {/*----------------- Tabs Container -------------- */}
       <div className="flex gap-10 items-center font-medium border-b-[1px] border-[#F4F5F7]">
         {/* ---------------- First Tab ---------------- */}
@@ -46,7 +46,13 @@ function Settings() {
       {/* --------------- Tabs content container -------------*/}
       <div>
         {/*----------------- Edit Profile container --------------*/}
-        <div className={toggleState === 1 ? "flex gap-10 mt-8" : "hidden"}>
+        <div
+          className={
+            toggleState === 1
+              ? "flex gap-10 mt-8 flex-col md:flex-row"
+              : "hidden"
+          }
+        >
           <div className="w-[100px] h-[100px] rounded-full  relative shrink-0">
             <img
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -59,7 +65,7 @@ function Settings() {
           </div>
           <div className="w-full">
             <form className="flex flex-col gap-6">
-              <div className="flex items-center gap-6 ">
+              <div className="flex items-center gap-6 flex-col md:flex-row">
                 <HSInput
                   type="input"
                   label="Your Name"
@@ -67,7 +73,7 @@ function Settings() {
                 />
                 <HSInput type="input" label="User Name" placeholder="Admin" />
               </div>
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-6 flex-col md:flex-row">
                 <HSInput
                   type="input"
                   label="Email"
@@ -75,7 +81,7 @@ function Settings() {
                 />
                 <HSInput type="input" label="Password" placeholder="********" />
               </div>
-              <div className="flex justify-end">
+              <div className="flex justify-center  md:justify-end">
                 <HSButton title="Save" styles="w-40" />
               </div>
             </form>
@@ -89,15 +95,15 @@ function Settings() {
                 type="input"
                 label="Current Password"
                 placeholder="********"
-                style="w-[400px]"
+                style="md:w-[400px]"
               />
               <HSInput
                 type="input"
                 label="New Password"
                 placeholder="********"
-                style="w-[400px]"
+                style="md:w-[400px]"
               />
-              <div className="flex justify-end">
+              <div className="flex justify-center md:justify-end">
                 <HSButton title="Save" styles="w-40" />
               </div>
             </form>
