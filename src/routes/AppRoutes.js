@@ -15,10 +15,10 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomeLayout />}>
+        <Route element={<HomeLayout />}>
           <Route index element={<Home />} />
-          <Route path="/:title" element={<Artical />} />
-          <Route path="/:title/:article" element={<SlugLayout />}>
+          <Route path="solution/:title" element={<Artical />} />
+          <Route path="solution/:title/:article" element={<SlugLayout />}>
             <Route path="" element={<SlugPage />} />
           </Route>
           {/* Add many routes as you want */}
@@ -29,7 +29,7 @@ const AppRoutes = () => {
 
         {/* --------------- Dashboard routes --------------- */}
         <Route path="/dashboard" element={<DashLayout />}>
-          <Route element={<Dashboard />} />
+          <Route index element={<Dashboard />} />
         </Route>
       </Routes>
     </Router>
