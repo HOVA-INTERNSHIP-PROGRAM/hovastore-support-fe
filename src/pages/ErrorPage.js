@@ -58,7 +58,7 @@ function ErrorPage({ statusCode, errorMessage, errorTitle }) {
         </nav>
       </div>
       <div className="bg-secondaryLight flex justify-center  flex-1 overflow-hidden relative px-6">
-        <div className="flex flex-col items-center gap-6 z-10">
+        <div className="flex flex-col items-center justify-center gap-6 z-10">
           <h1 className="font-bold text-[100px]">
             {statusCode ? statusCode : "404"}
           </h1>
