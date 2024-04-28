@@ -95,13 +95,13 @@ function Settings() {
                 type="input"
                 label="Current Password"
                 placeholder="********"
-                styles="md:w-[400px]"
+                style={`md:w-[400px]`}
               />
               <HSInput
                 type="input"
                 label="New Password"
                 placeholder="********"
-                styles="md:w-[400px]"
+                style={`md:w-[400px]`}
               />
               <div className="flex justify-center md:justify-end">
                 <HSButton title="Save" styles="w-40" />
