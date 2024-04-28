@@ -9,6 +9,7 @@ import SlugLayout from "../layouts/SlugLayout";
 import SlugPage from "../pages/SlugPage";
 import DashLayout from "../layouts/DashLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
+import NewArticle from "../pages/dashboard/NewArticle";
 
 const AppRoutes = () => {
   return (
@@ -24,13 +25,12 @@ const AppRoutes = () => {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<Forgot />} />
-    
 
         {/* --------------- Dashboard routes --------------- */}
         <Route path="/dashboard" element={<DashLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="/dashboard/newArticle" element={<NewArticle />} />
         </Route>
-
       </Routes>
     </Router>
   );
