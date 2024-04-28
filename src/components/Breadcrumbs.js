@@ -10,6 +10,7 @@ function Breadcrumbs() {
   const crumbs = location.pathname
     .split("/")
     .filter((crumb) => crumb !== "")
+    .slice(1)
     .map((crumb, index, array) => {
       const path = `/${array.slice(0, index + 1).join("/")}`;
       const displayName = crumb.replace(/%20/g, " ");
@@ -17,7 +18,7 @@ function Breadcrumbs() {
       return (
         <div key={crumb}>
           {index < array.length - 1 ? (
-            <Link to={path}>{displayName}</Link>
+            <Link to={`/solution${path}`}>{displayName}</Link>
           ) : (
             <span>{displayName}</span>
           )}

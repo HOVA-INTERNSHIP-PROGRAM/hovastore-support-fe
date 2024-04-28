@@ -18,7 +18,7 @@ const HSInput = ({
           className={`${style} relative text-primary  duration-100 outline-none justify-between flex items-center gap-6 px-2  w-full rounded-md font-semibold border-2 group-hover:border-primary`}
         >
           {icon && <p>{icon}</p>}
-          
+
           <input
             type={text}
             value={values}
