@@ -56,7 +56,7 @@ function Settings() {
           <div className="w-[100px] h-[100px] rounded-full  relative shrink-0">
             <img
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="profile-image"
+              alt="user-avatar"
               className="w-full h-full object-cover rounded-full"
             />
             <div className="absolute w-7 h-7 rounded-full bg-[#2E63EC] bottom-2 right-[-8px] z-10 flex items-center justify-center">
