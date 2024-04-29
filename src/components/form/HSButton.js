@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const HSButton = ({ path, click, title, icon, styles , target , onChange }) => {
+const HSButton = ({ path, click, title, icon, styles, target, onChange }) => {
   return (
     <Link
       target={target}

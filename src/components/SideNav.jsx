@@ -38,8 +38,8 @@ const SideNav = () => {
   ];
   const subMenu = [
     {
-      name: "Settings",
-      path: "Settings",
+      name: "settings",
+      path: "settings",
       icon: <IoSettingsOutline />,
     },
     {
