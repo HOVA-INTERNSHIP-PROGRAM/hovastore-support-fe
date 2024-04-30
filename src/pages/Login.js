@@ -1,36 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import HSInput from "../components/form/HSInput";
 import HSButton from "../components/form/HSButton";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from "react-icons/fa";
-import * as formValidation from "../validations/index"
 import { useFormik } from "formik";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectLoginStatus,
+  selectLoginError,
+  getIsAuthenticated,
+  makeLogin,
+  getIsAdmin,
+} from "../features/auth/loginSlice";
+import * as formValidation from "../validations/index";
 
 function Login() {
-
-  const auth = async () => {
-    try {
-      if (formik.isValid) {
-        const formData = {
-          email: formik.values.email,
-          password: formik.values.password,
-        };
-        console.log("Form Data", formData);
-      }
-    } catch (error) {
-      console.log("Fail to Validate Login", error)
-
-    }
-  }
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const loading = useSelector(selectLoginStatus);
+  const loginError = useSelector(selectLoginError);
+  const isAuthenticated = useSelector(getIsAuthenticated);
+  const isAdmin = useSelector(getIsAdmin);
   const formik = useFormik({
-    validate: formValidation.validateAuth,
     initialValues: {
       email: "",
       password: "",
     },
-    onSubmit: auth,
+    validate: formValidation.validateAuth,
+    onSubmit: async (values) => {
+      await dispatch(makeLogin(values));
+    },
   });
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      if (isAdmin) {
+        navigate("/dashboard");
+      } else {
+        navigate("/");
+      }
+    }
+  }, [isAuthenticated, isAdmin, navigate]);
 
   return (
     <div className="bg-secondary w-full h-dvh flex justify-center items-center">
@@ -39,6 +49,11 @@ function Login() {
 
           <div className="w-[95%] md:w-[85%] h-full flex flex-col justify-center items-center">
             <h2 className="text-2xl lx:text-4xl font-extrabold text-primary">HAVASTORE SUPPORT</h2>
+            {loginError && (
+              <div className="text-sm text-red-800 font-normal mt-2">
+                {loginError.message ? loginError.error : loginError}
+              </div>
+            )}
             <div className="mt-6 mdl:mt-[34px] w-full">
               <HSInput type="input"
                 placeholder="Email"
@@ -73,8 +88,7 @@ function Login() {
             </div>
             <HSButton
               click={() => formik.submitForm()}
-              // title={loading ? "Logging in..." : "Login"}
-              title={`Login`}
+              title={loading ? "Processing..." : "Login"}
               styles={`w-full !scale-100 mt-6 mdl:mt-12 bg-primary text-white`}
             />
             <div className="mt-6 mdl:mt-[44px] flex flex-col md:flex-row items-center md:items-center md:justify-center w-full text-[20px] md:text-[24px]">
