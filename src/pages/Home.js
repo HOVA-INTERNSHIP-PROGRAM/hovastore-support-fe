@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectAllBooks, getAllBooks, getOnebook, selectBooksError, selectBooksLoading } from "../features/solutions/booksSlice";
+import { selectAllBooks, getAllBooks, getOnebookByTitle, selectBooksError, selectBooksLoading } from "../features/solutions/booksSlice";
 import Accordions from "../components/Accordions";
 import CardSolution from "../components/cardSolution/cardSolution";
 import CTA from "../components/footer/UpperFooter";
@@ -17,8 +17,8 @@ const Home = () => {
     dispatch(getAllBooks());
   }, [dispatch]);
 
-  const getArticle = (id) => {
-     dispatch(getOnebook(id));
+  const getArticle = (categoryTitle) => {
+     dispatch(getOnebookByTitle(categoryTitle));
   }
 
   let content;
@@ -33,7 +33,7 @@ const Home = () => {
         icon={book.icon}
         title={book.name}
         description={book.description}
-        click={()=>{getArticle(book?._id)}}
+        click={()=>{getArticle(book?.name)}}
       />
     ));
   } else {

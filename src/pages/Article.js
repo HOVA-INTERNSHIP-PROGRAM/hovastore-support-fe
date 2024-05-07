@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SubCardSolution from "../components/SubCardSolution";
-import { selectCurrentBook, setCurrentQuestion } from "../features/solutions/booksSlice";
+import { selectCurrentBook, setCurrentQuestion, getOnebookByTitle } from "../features/solutions/booksSlice";
 import { useSelector, useDispatch } from "react-redux"
 import { FiFile } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 function Artical() {
+  const { title: name } = useParams();
+  useEffect(() => {
+    dispatch(getOnebookByTitle(name));
+  }, [dispatch, name]);
+
   const dispatch = useDispatch();
   const article = useSelector(selectCurrentBook);
   const handleQuestionClick = (question) => {
