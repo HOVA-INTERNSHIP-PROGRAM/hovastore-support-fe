@@ -4,11 +4,14 @@ import { GrArticle } from "react-icons/gr";
 import { VscFeedback } from "react-icons/vsc";
 import { CgScreen } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../features/sidebar/sidebarSlice";
+import { logout } from "../features/auth/logoutSlice";
+
 const SideNav = () => {
+  const navigate = useNavigate();
   const menu = [
     {
       name: "Dashboard",
@@ -48,6 +51,15 @@ const SideNav = () => {
       icon: <MdLogout />,
     },
   ];
+
+  const handleLogout = (path) => {
+    if (path === "Logout") {
+      dispatch(logout());
+      navigate("/");
+    } else {
+      navigate(path);
+    }
+  };
 
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
@@ -122,28 +134,22 @@ const SideNav = () => {
           ))}
         </div>
       </div>
-      <NavLink className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
         {subMenu.map((menu, index) => (
-          <NavLink
-            to={menu.path}
+          <div
             key={index}
-            className={(active) =>
-              active.isActive
-                ? `bg-red-100 !w-full px-2 py-2 text-black text-base flex items-center gap-3 cursor-pointer  duration-100 rounded `
-                : `text-white hover:bg-red-100 !w-full px-2 py-2 hover:text-black text-base flex items-center gap-3 cursor-pointer  duration-100 rounded `
-            }
+            onClick={() => handleLogout(menu.path)}
+            className="text-white hover:bg-red-100 !w-full px-2 py-2 hover:text-black text-base flex items-center gap-3 cursor-pointer duration-100 rounded"
           >
-            <span style={{ display: menu.icon ? "block" : "none" }}>
-              {menu.icon}
-            </span>
+            <span>{menu.icon}</span>
             <span
               className={`text-base font-medium flex-1 ${!open && "hidden"}`}
             >
-              {menu?.name}
+              {menu.name}
             </span>
-          </NavLink>
+          </div>
         ))}
-      </NavLink>
+      </div>
     </div>
   );
 };

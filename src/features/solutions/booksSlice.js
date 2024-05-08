@@ -35,6 +35,20 @@ export const getOnebook = createAsyncThunk(
     }
 );
 
+// get getOnebookByTitle
+export const getOnebookByTitle = createAsyncThunk(
+    'books/fetchByTitle',
+    async (categoryTitle, { rejectWithValue }) => {
+        try {
+            const response = await Bookservice.getTitle(categoryTitle);
+
+            return response.data?.data;
+        } catch (error) {
+            return rejectWithValue(error.message?.data);
+        }
+    }
+);
+
 export const bookSlice = createSlice({
     name: "books",
     initialState,
@@ -66,6 +80,18 @@ export const bookSlice = createSlice({
                 state.loading = false;
             })
             .addCase(getOnebook.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+            .addCase(getOnebookByTitle.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(getOnebookByTitle.fulfilled, (state, action) => {
+                state.currentBook = action.payload;
+                state.loading = false;
+            })
+            .addCase(getOnebookByTitle.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             });

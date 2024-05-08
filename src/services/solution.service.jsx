@@ -9,6 +9,10 @@ class solutionDataService {
     return http.get(`/categories/${id}`);
   }
 
+  getTitle(categoryTitle) {
+    return http.get(`/articles/${categoryTitle}/category`);
+  }
+
   create(data, token) {
     return http.post("/categories", data, {
       headers: {
