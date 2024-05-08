@@ -8,7 +8,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../features/sidebar/sidebarSlice";
-import { logout } from "../features/auth/loginSlice";
+import { logout } from "../features/auth/logoutSlice";
 
 const SideNav = () => {
   const navigate = useNavigate();

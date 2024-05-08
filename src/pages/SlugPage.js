@@ -2,16 +2,23 @@ import { MdThumbUp, MdThumbDown } from "react-icons/md";
 import HSInput from "../components/form/HSInput";
 import HSButton from "../components/form/HSButton";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentQuestion } from "../features/solutions/booksSlice";
-import { seleteGetfeedbacksStatus, createFeedbacks } from "../features/feedback/feeedbackSlice";
+import { selectCurrentQuestion , getOnebookByTitle } from "../features/solutions/booksSlice";
+import { seleteGetfeedbackStatus, createfeedback } from "../features/feedback/createFeedbackSlice";
 import * as formValidation from "../validations/index";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 function SlugPage() {
+  const dispatch = useDispatch();
+  const { title: name } = useParams();
+  console.log(name);
+  useEffect(() => {
+    dispatch(getOnebookByTitle(name));
+  }, [name, dispatch]);
+
   const [message, setMessage] = useState("");
   const question = useSelector(selectCurrentQuestion);
-  const loading = useSelector(seleteGetfeedbacksStatus);
-  const dispatch = useDispatch();
+  const loading = useSelector(seleteGetfeedbackStatus);
   const formik = useFormik({
     validate: formValidation.validateFeedbacks,
     initialValues: {
@@ -21,13 +28,13 @@ function SlugPage() {
     },
     onSubmit: async (values) => {
       try {
-        const resultAction = await dispatch(createFeedbacks({
+        const resultAction = await dispatch(createfeedback({
           questionId: question?._id,
           email: values.email,
           names: values.names,
           feedback: values.feedback,
         }));
-        if (createFeedbacks.fulfilled.match(resultAction)) {
+        if (createfeedback.fulfilled.match(resultAction)) {
           setMessage("Operation successful!");
           formik.resetForm(); 
         } else {

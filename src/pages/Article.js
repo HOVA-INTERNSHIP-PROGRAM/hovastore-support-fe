@@ -1,22 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Breadcrumbs from "../components/Breadcrumbs";
 import SubCardSolution from "../components/SubCardSolution";
-import { selectCurrentBook, setCurrentQuestion, getOnebookByTitle } from "../features/solutions/booksSlice";
-import { useSelector, useDispatch } from "react-redux"
+import { selectCurrentBook, setCurrentQuestion, getOnebookByTitle, selectBooksLoading, selectBooksError } from "../features/solutions/booksSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { FiFile } from "react-icons/fi";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import NoData from '../components/NoData';
+import Skeleton from '../components/skeleton/article.Skeleton';
 
 function Artical() {
+  const dispatch = useDispatch();
   const { title: name } = useParams();
+  const article = useSelector(selectCurrentBook);
+  const isLoading = useSelector(selectBooksLoading);
+  const error = useSelector(selectBooksError);
+
   useEffect(() => {
     dispatch(getOnebookByTitle(name));
-  }, [dispatch, name]);
+  }, [name, dispatch]);
 
-  const dispatch = useDispatch();
-  const article = useSelector(selectCurrentBook);
   const handleQuestionClick = (question) => {
     dispatch(setCurrentQuestion(question));
   };
+
+  if (isLoading) {
+    return <div className='lg:py-12 lg:px-28 py-10 px-6 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3'>
+      <Skeleton />
+      <Skeleton />
+      <Skeleton />
+    </div>;
+  }
+
+  if (error) {
+    return <div className="text-center py-10">Error: {error.message}</div>;
+  }
+
+  if (!article || article.length === 0) {
+    return <NoData />;
+  }
 
   return (
     <div className="lg:py-12 lg:px-28 py-10 px-6 bg-secondaryLight">
@@ -24,7 +46,7 @@ function Artical() {
         <Breadcrumbs />
       </div>
       <div className="grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 gap-y-4">
-        {article?.articles?.map((element, index) => {
+        {article?.map((element, index) => {
           const articals = element?.questions;
           return (
             <SubCardSolution
@@ -35,7 +57,7 @@ function Artical() {
                   <NavLink
                     to={`${element?.title}`}
                     onClick={() => handleQuestionClick(ele)}
-                    className="flex items-center whitespace-nowrap flex-nowrap gap-1" key={ele?.question}>
+                    className="flex items-center text-sm flex-nowrap gap-1" key={ele?.question}>
                     <FiFile />
                     <p>{ele?.question}</p>
                   </NavLink>

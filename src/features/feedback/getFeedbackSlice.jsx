@@ -22,23 +22,7 @@ export const getAllfeedbacks = createAsyncThunk(
   }
 );
 
-// create feedbacks
 
-export const createFeedbacks = createAsyncThunk(
-  "feedbacks/create",
-  async ({ questionId, names, email, feedback }, { rejectWithValue }) => {
-    try {
-      const feedbak = { names, email, feedback };
-      const response = await feedbacksService.create(questionId, feedbak);
-      return response.data?.data;
-    } catch (err) {
-      return rejectWithValue(
-        err.response.data.message ||
-          "An error occurred Check Your Internet Connection"
-      );
-    }
-  }
-);
 
 export const feedbacksSlice = createSlice({
   name: "feedbacks",
@@ -58,18 +42,6 @@ export const feedbacksSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      .addCase(createFeedbacks.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(createFeedbacks.fulfilled, (state, action) => {
-        state.loading = false;
-        state.feedbacks = action.payload;
-        state.error = null;
-      })
-      .addCase(createFeedbacks.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      });
   },
 });
 

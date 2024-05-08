@@ -15,10 +15,8 @@ export const makeLogin = createAsyncThunk(
     try {
       const response = await loginService.login({ email, password });
       if (response) {
-        localStorage.setItem("profile", response.data.data.profile);
-        localStorage.setItem("name", response.data.data.name);
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("isAdmin", String(response.data.data.isAdmin));
+  
       }
       return response.data.data;
     } catch (error) {
@@ -52,22 +50,6 @@ export const makeSignup = createAsyncThunk(
 );
 
 
-
-export const logout = createAsyncThunk(
-  "login/logout",
-  async (_, { rejectWithValue }) => {
-    try {
-      localStorage.removeItem("profile");
-      localStorage.removeItem("name");
-      localStorage.removeItem("token");
-      localStorage.removeItem("isAdmin");
-      return true;
-    } catch (error) {
-      return rejectWithValue("Failed to logout.");
-    }
-  }
-);
-
 export const loginSlice = createSlice({
   name: "login",
   initialState,
@@ -87,13 +69,6 @@ export const loginSlice = createSlice({
       .addCase(makeLogin.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        state.isAuthenticated = false;
-        state.isAdmin = false;
-      })
-      .addCase(logout.fulfilled, (state) => {
-        state.userData = null;
-        state.loading = false;
-        state.error = null;
         state.isAuthenticated = false;
         state.isAdmin = false;
       })
